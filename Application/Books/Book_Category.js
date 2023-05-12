@@ -17,7 +17,7 @@ const Book_Category = () => {
             id: 2,
             name: 'Comedy',
             req: require("../Assets/Comedy/comedy_main.jpg"),
-            action: "Comedy"
+            action: "Comedy",
         },
         {
             id: 3,
