@@ -1,25 +1,54 @@
 import React, { useState, useEffect } from "react";
-import { View, ScrollView } from "react-native";
+import { View, ScrollView} from "react-native";
 import { Image, Overlay, Text, ThemeConsumer } from "react-native-elements";
 import { useNavigation } from "@react-navigation/native";
 import Icon from "react-native-vector-icons/MaterialIcons";
 import axios from "axios";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import Tts from "react-native-tts";
 
 const Book_Details = ({ route }) => {
+
+    // Getting values from previous screen buy using route
+    const item = route.params
+
+    //Using navigation
     const navigation = useNavigation()
+
+    // Using state
     const [subscribed, setSubscribed] = useState(false)
-    const [voiceVisible, setVoiceVisible] = useState(false)
+    const [voiceContent, setVoiceContent] = useState(item.content)
+    const [speak, setSpeak] = useState(false)
+    const [visible, setVisible] = useState(false)
+
+    //using useEffect for handle press
+    useEffect(() => {
+        handlePress()
+    }, [speak])
+
+    // using useEffect for getData
     useEffect(() => {
         getData()
     }, [])
+
+    // Handle press function for Tts Speak 
+    const handlePress = () => {
+        if (speak) {
+            Tts.speak(voiceContent)
+        }
+        else {
+            Tts.stop()
+        }
+    }
+
+    // Getting key and subscribed/unSubscribed from firebase 
     const getData = async () => {
         let keyData = await AsyncStorage.getItem("userKey")
         const res = await axios.get(`https://book-2bceb-default-rtdb.firebaseio.com/books/${keyData}/subscribed.json`)
         setSubscribed(res.data.subscribed)
     }
-    const [visible, setVisible] = useState(false)
-    const item = route.params
+
+    // This Function for text length displaying
     const textTruncate = (str, length, ending) => {
         if (length == null) {
             length = 85;
@@ -28,21 +57,22 @@ const Book_Details = ({ route }) => {
             ending = " "
         }
         if (str.length > length) {
-            return str.substring(0, length - ending.length) + ending;
+            return str.substring(0, length - ending.length) + ending
         } else {
-            return str;
+            return str
         }
-    };
+    }
+
+    // Main Function of code executing
     return (
         <ThemeConsumer>
             {
                 ({ theme }) => (
                     <View style={theme.Book_Details_Styles.mainContainer}>
                         <View style={theme.Book_Details_Styles.container}>
-                            <Icon name="navigate-before" size={50} style={theme.Book_Details_Styles.navigate_before_icon} onPress={() => navigation.goBack()}></Icon>
-                            <Text style={theme.Book_Details_Styles.name_text}>{item.name}</Text>
-                            <Icon name="hearing" style={theme.Book_Details_Styles.hearingIcon} size={30}/>
-                            <Text style={theme.Book_Details_Styles.readAloud}>Readaloud</Text>
+                            <Icon name="navigate-before" size={50} style={theme.Book_Details_Styles.navigate_before_icon} onPress={() => { setSpeak(false), navigation.goBack() }}></Icon>
+                            <Text style={theme.Book_Details_Styles.name_text} >{item.name}</Text>
+                            <Icon name={speak ? "hearing-disabled" : "hearing"} style={theme.Book_Details_Styles.hearingIcon} size={30} onPress={() => subscribed ? setSpeak(!speak) : setVisible(true)} />
                         </View>
                         <ScrollView>
                             <View>
@@ -66,9 +96,7 @@ const Book_Details = ({ route }) => {
                                 <Text onPress={() => navigation.navigate("Payment_page", item)} style={theme.Book_Details_Styles.click_here_text}>Click Here</Text>
                             </View>
                         </Overlay>
-
                     </View >
-
                 )
             }
         </ThemeConsumer>

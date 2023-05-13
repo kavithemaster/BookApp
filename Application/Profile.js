@@ -47,7 +47,7 @@ const Profile = () => {
         setUserData(res.data);
         setVisibility(false)
         ToastAndroid.show(
-            'Successfully Completed', ToastAndroid.BOTTOM, ToastAndroid.SHORT
+            'Edited Successfully', ToastAndroid.BOTTOM, ToastAndroid.SHORT
         )
 
     }
@@ -147,7 +147,7 @@ const Profile = () => {
                         >
                             <View style={theme.Profile_Styles.setting_modal}>
                                 <Text style={theme.Profile_Styles.setting_modal_text} onPress={() => { setVisibility(true), setSettingsModal(false) }}>Edit Your Profile</Text>
-                                <Text style={theme.Profile_Styles.setting_modal_text} onPress={() => setSettingsModal(false)}>close</Text>
+                                <Text style={theme.Profile_Styles.setting_modal_text} onPress={() => setSettingsModal(false)}>Close</Text>
 
 
                             </View>

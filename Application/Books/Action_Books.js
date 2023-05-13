@@ -17,26 +17,26 @@ const Actions = () => {
         {
             id: 1,
             subscribed: false,
-            name: 'Azarinth_Healer ',
+            name: 'Azarinth Healer',
             req: require("../Assets/Actions/Azarinth_Healer.jpg"),
             amount: 390,
-            content: "Action books are often very heavy on the plot with danger pulling the story forward, leaving readers on the edge of their seat desperate to know what happens next. Elements of risk and surprise are key factors in action stories Action books are often very heavy on the plot with danger pulling the story forward, leaving readers on the edge of their seat desperate to know what happens next. Elements of risk and surprise are key factors in action stories",
+            content: "Real name G. Harthane. The author of Azarinth Healer. Posts chapters to Royal Road and Patreon, with the paying customers on Patreon being about 20 chapters ahead of the free publications on Royal Road at any given time.Keyaru (ケヤル), also known as Keyaruga (ケヤルガ), is the main protagonist of Redo of Healer. On his 14th birthday, he was chosen as one of the Heroes, the Hero of Healing. After years of torture at the hands of his allies, he manages to break free and get the Philosopher's Stone",
         },
         {
             id: 2,
             ubscribed: false,
-            name: 'The_Instructor ',
+            name: 'The Instructor ',
             req: require("../Assets/Actions/The_Instructor.jpg"),
             amount: 250,
-            content: "Books are often very heavy on the plot with danger pulling the story forward, leaving readers on the edge of their seat desperate to know what happens next. Elements of risk and surprise are key factors in action stories Action books are often very heavy on the plot with danger pulling the story forward, leaving readers on the edge of their seat desperate to know what happens next. Elements of risk and surprise are key factors in action stories",
+            content: "Derek Harrington is a terrific new hero, a former Marine and wilderness survival expert who finds himself in a battle of wits against both a determined enemy and nature itself. Packed with action, tension, and humanity, The Instructor delivers. T. R. HENDRICKS is a former United States Army Captain who served as a tank platoon leader, and then as a military intelligence officer, where he was an advisor to the Iraqi Ministry of Interior's National Information and Intelligence Agency. When not working or writing in his home in Upstate New York, Hendricks is most likely reading, woodworking, or watching his beloved San Francisco 49ers. The Instructor is his first novel.",
         },
         {
             id: 3,
             ubscribed: false,
-            name: 'The_King_of_Drugs',
+            name: 'The King of Drugs',
             req: require("../Assets/Actions/The_King_of_Drugs.jpg"),
             amount: 990,
-            content: "This are often very heavy on the plot with danger pulling the story forward, leaving readers on the edge of their seat desperate to know what happens next. Elements of risk and surprise are key factors in action stories Action books are often very heavy on the plot with danger pulling the story forward, leaving readers on the edge of their seat desperate to know what happens next. Elements of risk and surprise are key factors in action stories",
+            content: "This is the story of the most successful cocaine dealers in the world: Pablo Escobar Gaviria, Jorge Luis Ochoa Vasquez, Carlos Lehder Rivas and Jose Gonzalo Rodriguez Gacha. In the 1980s they controlled more than fifty percent of the cocaine flowing into the United States. The cocaine trade is capitalism on overdrive -- supply meeting demand on exponential levels. Here you'll find the story of how the modern cocaine business started and how it turned a rag tag group of hippies and sociopaths into regal kings as they stumbled from small-time suitcase smuggling to levels of unimaginable sophistication and daring. The $2 billion dollar system eventually became so complex that it required the manipulation of world leaders, corruption of revolutionary movements and the worst kind of violence to protect.",
 
         },
         {
@@ -45,15 +45,15 @@ const Actions = () => {
             name: 'Misery',
             req: require("../Assets/Horrer/Misery.jpg"),
             amount: 564,
-            content: "It is very heavy on the plot with danger pulling the story forward, leaving readers on the edge of their seat desperate to know what happens next. Elements of risk and surprise are key factors in action stories Action books are often very heavy on the plot with danger pulling the story forward, leaving readers on the edge of their seat desperate to know what happens next. Elements of risk and surprise are key factors in action stories",
+            content: "Misery explores Stephen King's own experiences with writer's block, drug addiction, and feeling stifled by his reputation as a writer of horror novels.It is a book in which addiction is explored in multiple forms by both characters, and it is also a book about the nature of addiction, written by a man familiar with the concept. King wrote Misery about cocaine addiction specifically: “Misery is a book about cocaine. Annie Wilkes is cocaine",
         },
         {
             id: 5,
-            name: 'The_Hunger',
+            name: 'The Hunger',
             ubscribed: false,
             req: require("../Assets/Horrer/The_Hunger.jpg"),
             amount: 3760,
-            content: "Danger pulling the story forward, leaving readers on the edge of their seat desperate to know what happens next. Elements of risk and surprise are key factors in action stories Action books are often very heavy on the plot with danger pulling the story forward, leaving readers on the edge of their seat desperate to know what happens next. Elements of risk and surprise are key factors in action stories",
+            content: "The Hunger retells the infamous story of the Donner Party, with a supernatural twist. The Donner-Reed party was a group of pioneers traveling west to California who were stuck in what became known as Donner Pass in the winter of 1846.The novel is unusual in that it deals with the practical considerations of vampirism, such as the difficulty in obtaining victims and concealing frequent murders.",
         },
     ]
 

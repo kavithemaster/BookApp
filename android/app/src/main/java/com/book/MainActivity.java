@@ -8,13 +8,8 @@ import com.facebook.react.defaults.DefaultReactActivityDelegate;
 import com.facebook.react.modules.core.PermissionListener;
 import com.facebook.react.modules.core.PermissionAwareActivity;
 
+
 public class MainActivity extends ReactActivity implements PermissionAwareActivity {
-  // ...
-}
-
-
-
-public class MainActivity extends ReactActivity {
 
   /**
    * Returns the name of the main component registered from JavaScript. This is used to schedule

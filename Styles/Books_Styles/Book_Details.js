@@ -1,5 +1,4 @@
 import { StyleSheet } from 'react-native'
-
 export const Book_Details_Styles = StyleSheet.create({
     mainContainer: {
         backgroundColor: "white",
@@ -35,8 +34,9 @@ export const Book_Details_Styles = StyleSheet.create({
         fontWeight: "700",
         color: "black",
         marginBottom: 90,
-        padding: 18,
+        padding: 20,
         marginTop:20,
+        textAlign:"justify"
     },
     read_more_text: {
         color: "blue",
@@ -72,14 +72,8 @@ export const Book_Details_Styles = StyleSheet.create({
     },
     hearingIcon:{
         position:"absolute",
-        marginHorizontal:355,
         color:"black",
-        top:11,
+        marginHorizontal:365,
+        top:10,        
     },
-    readAloud:{
-        fontSize:16,
-        position:'absolute',
-        right: 10,
-        top: 40,
-    }
 })
