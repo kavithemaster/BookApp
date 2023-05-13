@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { View, ScrollView} from "react-native";
+import { View, ScrollView } from "react-native";
 import { Image, Overlay, Text, ThemeConsumer } from "react-native-elements";
 import { useNavigation } from "@react-navigation/native";
 import Icon from "react-native-vector-icons/MaterialIcons";
@@ -74,9 +74,11 @@ const Book_Details = ({ route }) => {
                             <Text style={theme.Book_Details_Styles.name_text} >{item.name}</Text>
                             <Icon name={speak ? "hearing-disabled" : "hearing"} style={theme.Book_Details_Styles.hearingIcon} size={30} onPress={() => subscribed ? setSpeak(!speak) : setVisible(true)} />
                         </View>
+                        <View style={theme.Book_Details_Styles.imageConatiner}>
+                            <Image source={item.req} style={theme.Book_Details_Styles.image}></Image>
+                        </View>
                         <ScrollView>
                             <View>
-                                <Image source={item.req} style={theme.Book_Details_Styles.image}></Image>
                                 <View>
                                     <Text style={theme.Book_Details_Styles.main_text}> {subscribed ? item.content : textTruncate(item.content)} {!subscribed && <Text onPress={() => setVisible(true)} style={theme.Book_Details_Styles.read_more_text}>Read More....</Text>} </Text>
                                 </View>

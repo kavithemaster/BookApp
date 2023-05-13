@@ -74,7 +74,7 @@ const Profile = () => {
                                     Alert.alert('Alert', 'Are you Sure want to Logout ', [
                                         {
                                             text: 'No',
-                                            onPress: () => { navigation.goBack() },
+                                            onPress: () => { navigation.navigate("Profile")},
 
                                         },
                                         {

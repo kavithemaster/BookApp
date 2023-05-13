@@ -2,7 +2,7 @@
 import { Splash_Styles } from "./Styles/Splash"
 import { Login_Styles } from "./Styles/Sign_in_up/Login"
 import { Register_styles } from "./Styles/Sign_in_up/Register"
-import { Book_Page_styles } from "./Styles/Book"
+import { Book_Page_styles } from "./Styles/Books_Styles/Book_Category"
 import { Action_Book_Styles } from "./Styles/Books_Styles/Action_Books"
 import { Horrer_Book_style } from "./Styles/Books_Styles/Horrer_Book"
 import { Mystery_Book_Styles } from "./Styles/Books_Styles/Mystery_Book"

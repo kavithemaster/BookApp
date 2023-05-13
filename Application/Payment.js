@@ -41,13 +41,13 @@ const Payment_page = ({ route }) => {
                             animationType="slide"
                             transparent={true}
                             visible={visible}
-                            overlayStyle={{ borderRadius: 20 }}
+                            overlayStyle={theme.Payment_style.overLayStyle}
                         >
                             <View style={theme.Payment_style.Overlay_container}>
+                                <Icon name="arrow-left" size={47} onPress={() => setVisible(false)} style={theme.Payment_style.arrowLeft} />
+                                    <Image source={require("../Application/Assets/Payments/Conformation/buy.gif")}  style={theme.Payment_style.clickGif} onPress={() => close()}></Image>
                                 <TouchableOpacity>
-                                <Icon name="arrow-left" size={47} onPress={() => setVisible(false)} style={theme.Payment_style.icon_style1} />
-                                    <Image source={require('../Application/Assets/Payments/Conformation/click.gif')} ></Image>
-                                    <Text style={theme.Payment_style.GetIt_text} onPress={() => close()}>Get It</Text>
+                                    <Text style={theme.Payment_style.GetIt_text} onPress={()=> close()} >Get It</Text>
                                 </TouchableOpacity>
                             </View>
                         </Overlay>

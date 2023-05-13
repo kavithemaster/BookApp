@@ -15,25 +15,33 @@ export const Payment_style = StyleSheet.create({
         marginLeft: 20,
         color: "black",
     },
-    icon_style1: {
-        marginLeft: 10,
+    arrowLeft: {
         color: "black",
     },
     GetIt_text: {
         fontSize: 30,
         fontStyle: "italic",
         fontWeight: "bold",
-        marginLeft: 180,
-        backgroundColor: "blue",
+        backgroundColor: "red",
         borderRadius: 20,
         padding: 10,
-        alignSelf: "center",
         color: "white",
+        textAlign: "center",
+        width: "50%",
+        alignSelf: "flex-end",
+        top:30,
     },
-    Overlay_container: {
+    clickGif: {
+        alignSelf: "center",
+        width:"100%",
+        height:"50%",
+        resizeMode:"contain",
+    },
+    overLayStyle: {
+        borderRadius: 20,
         width: "90%",
-        height: "35%",
-        borderRadius: 70,
+        justifyContent: "center",
+        height:370,
     },
     Overlay_container1: {
         width: "100%",
@@ -56,6 +64,7 @@ export const Payment_style = StyleSheet.create({
         alignSelf: "center",
         color: "black",
         marginTop: 60,
-        fontWeight:"800",
-    }
+        fontWeight: "800",
+        textAlign: "justify"
+    },
 })

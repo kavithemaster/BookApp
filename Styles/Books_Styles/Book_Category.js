@@ -1,37 +1,37 @@
 import { StyleSheet } from 'react-native'
 export const Book_Page_styles = StyleSheet.create({
     main_container: {
-        marginTop: 10,
-        backgroundColor: "cyan",
+        backgroundColor: "white",
+        justifyContent:"center",
     },
     text: {
         fontSize: 20,
         color: 'black',
-        backgroundColor: "lavenderblush",
+        backgroundColor: "white",
         width: 200,
         fontWeight: 'bold',
         paddingLeft: 30,
-        borderTopRightRadius: 50,
+        borderBottomRightRadius: 50,
         borderBottomLeftRadius: 50,
-        marginLeft: 5,
         borderWidth: 1,
         fontStyle: "italic",
         textShadowRadius: 10,
         alignSelf: "center",
         borderBottomWidth: 8,
-        borderBottomColor: "blue",
+        borderBottomColor:"dodgerblue",
         marginTop: 1,
+        justifyContent:"center",
+        marginHorizontal:3,
     },
     opacity: {
-        width: '100%',
+        width: '98%',
         height: 260,
         alignSelf: "center",
     },
     image: {
         width: '98%',
-        marginBottom: 19,
+        marginBottom: 10,
         alignSelf: "center",
-        borderLeftWidth: 10,
         marginTop: 5,
     }
 })

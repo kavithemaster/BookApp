@@ -4,39 +4,51 @@ export const Book_Details_Styles = StyleSheet.create({
         backgroundColor: "white",
         flex: 1,
     },
-    container:{
-        flexDirection:"row",
-        top:15,
+    container: {
+        flexDirection: "row",
+        top: 15,
     },
     navigate_before_icon: {
         color: "black",
         marginLeft: 10,
     },
     image: {
-        width: "40%",
-        height: 290,
-        marginTop: 40,
-        marginLeft: 120,
+        width: "100%",
+        height: 370,
+        resizeMode:"stretch",
+        // marginHorizontal: 10,
+        borderTopRightRadius: 30,
+        borderTopLeftRadius: 30
+    },
+    imageConatiner: {
+        elevation:5,
+        // borderWidth:2,
+        width: '95%',
+        top:20,marginHorizontal: 10,
+        borderTopRightRadius: 30,
+        borderTopLeftRadius: 30,
+        paddingTop: 10
+
     },
     name_text: {
         alignSelf: "center",
         fontSize: 30,
         fontWeight: "700",
         color: "black",
-        fontStyle:"italic",
-        position:"absolute",
-        marginLeft:100,
-        textDecorationLine:"underline",
+        fontStyle: "italic",
+        position: "absolute",
+        marginLeft: 100,
+        textDecorationLine: "underline",
     },
     main_text: {
-        alignSelf:"flex-end",
+        alignSelf: "flex-end",
         fontSize: 20,
         fontWeight: "700",
         color: "black",
         marginBottom: 90,
-        padding: 20,
-        marginTop:20,
-        textAlign:"justify"
+        padding: 27,
+        textAlign: "justify",
+        top:40,
     },
     read_more_text: {
         color: "blue",
@@ -70,10 +82,10 @@ export const Book_Details_Styles = StyleSheet.create({
         color: "black",
         fontWeight: "800",
     },
-    hearingIcon:{
-        position:"absolute",
-        color:"black",
-        marginHorizontal:365,
-        top:10,        
+    hearingIcon: {
+        position: "absolute",
+        color: "black",
+        marginHorizontal: 365,
+        top: 10,
     },
 })
