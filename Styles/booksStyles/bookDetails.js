@@ -23,7 +23,7 @@ export const bookDetails = StyleSheet.create({
     imageConatiner: {
         elevation: 5,
         width: '90%',
-        top: 50,
+        top: 59,
         marginHorizontal: 10,
         borderTopRightRadius: 30,
         borderTopLeftRadius: 30,
@@ -84,11 +84,11 @@ export const bookDetails = StyleSheet.create({
         position:"absolute",
         top:10,
         color:"black",
-        right:10,
+        right:23,
     },
     minimize: {
         position:"absolute",
         color:"black",
-        left:10,
+        left:28,
     }
 })

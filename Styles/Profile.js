@@ -111,7 +111,7 @@ export const profile = StyleSheet.create({
     },
     settingModal: {
         width: 190,
-        height: 80,
+        height: 110,
         backgroundColor: "lightblue",
         position: "absolute",
         top: 80,
@@ -124,5 +124,9 @@ export const profile = StyleSheet.create({
         fontWeight: "900",
         padding: 5,
         paddingLeft: 20
+    },
+    musicNote:{
+        left:20,
+        color:"black",
     }
 })

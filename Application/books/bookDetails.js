@@ -33,12 +33,13 @@ const BookDetails = ({ route }) => {
     }, [])
 
     const increaseFontSize = () => {
-        setFontSize(fontSize + 2);
-    };
+       fontSize < 30 && setFontSize(fontSize + 2)
+    }
+    
 
     const decreaseFontSize = () => {
-        setFontSize(fontSize - 2);
-    };
+        fontSize > 16 && setFontSize(fontSize - 2)
+    }
 
     // Handle press function for Tts Speak 
     const handlePress = () => {

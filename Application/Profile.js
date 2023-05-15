@@ -9,6 +9,7 @@ import axios from "axios";
 import { Formik } from "formik";
 import * as Yup from "yup";
 
+
 const validation = Yup.object({
     UserName: Yup
         .string()
@@ -27,23 +28,26 @@ const Profile = () => {
     const navigation = useNavigation()
     const [visibility, setVisibility] = useState(false)
     const [settingsModal, setSettingsModal] = useState(false)
+    const [userData, setUserData] = useState([])
+    const { setLogin } = useContext(AppContext)
+
     useEffect(() => {
         getUSerData()
     }, [])
-    const [userData, setUserData] = useState([])
+    
+    // Grtting user data from Firebase
     const getUSerData = async () => {
         let key = await AsyncStorage.getItem("userKey")
         const res = await axios.get(`https://book-2bceb-default-rtdb.firebaseio.com/books/${key}.json`)
         setUserData(res.data);
     }
-    // Getting Values from useConntext to dislplay user details
-    const { setLogin } = useContext(AppContext)
 
+
+    // Getting Values from useConntext to dislplay user details
     const onAddHandler = async (values) => {
         const data = { ...values, Password: userData.Password, ConformPassword: userData.ConformPassword }
         const key = await AsyncStorage.getItem("userKey")
         const res = await axios.put(`https://book-2bceb-default-rtdb.firebaseio.com/books/${key}.json`, data)
-        // getUSerData()
         setUserData(res.data);
         setVisibility(false)
         ToastAndroid.show(
@@ -51,6 +55,7 @@ const Profile = () => {
         )
 
     }
+
     // Main Code Execution 
     return (
         <ThemeConsumer>
@@ -145,9 +150,8 @@ const Profile = () => {
                             onRequestClose={() => console.log("str")}
                         >
                             <View style={theme.profile.settingModal}>
-                                <Text style={theme.profile.settingModalText} onPress={() => { setVisibility(true), setSettingsModal(false) }}>Edit Your Profile</Text>
+                                <Text style={theme.profile.settingModalText} onPress={() => { setVisibility(true), setSettingsModal(false) }}>Edit Your Profile</Text>                                
                                 <Text style={theme.profile.settingModalText} onPress={() => setSettingsModal(false)}>Close</Text>
-
 
                             </View>
 
