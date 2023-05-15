@@ -18,18 +18,18 @@ export const bookDetails = StyleSheet.create({
         resizeMode: "stretch",
         borderTopRightRadius: 30,
         borderTopLeftRadius: 30,
-        top:14,
+        top: 14,
     },
     imageConatiner: {
         elevation: 5,
         width: '90%',
-        top: 20,
+        top: 50,
         marginHorizontal: 10,
         borderTopRightRadius: 30,
         borderTopLeftRadius: 30,
         alignSelf: "center",
-        height:310,
-        zIndex:2,
+        height: 310,
+        zIndex: 4,
     },
     nameText: {
         fontSize: 30,
@@ -40,18 +40,6 @@ export const bookDetails = StyleSheet.create({
         textDecorationLine: "underline",
         textAlign: "center",
         marginLeft: 100,
-    },
-    mainText: {
-        alignSelf: "center",
-        fontSize: 20,
-        fontWeight: "700",
-        marginBottom: 90,
-        padding: 27,
-        textAlign: "justify",
-        overflow:"hidden",
-        marginTop:25,
-        fontSize:20,
-
     },
     readMoreText: {
         color: "blue",
@@ -91,4 +79,16 @@ export const bookDetails = StyleSheet.create({
         marginHorizontal: 365,
         top: 10,
     },
+    addIcon: {
+        alignSelf:"flex-end",
+        position:"absolute",
+        top:10,
+        color:"black",
+        right:10,
+    },
+    minimize: {
+        position:"absolute",
+        color:"black",
+        left:10,
+    }
 })

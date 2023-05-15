@@ -20,6 +20,7 @@ const BookDetails = ({ route }) => {
     const [voiceContent, setVoiceContent] = useState(item.content)
     const [speak, setSpeak] = useState(false)
     const [visible, setVisible] = useState(false)
+    const [fontSize, setFontSize] = useState(18);
 
     //using useEffect for handle press
     useEffect(() => {
@@ -30,6 +31,14 @@ const BookDetails = ({ route }) => {
     useEffect(() => {
         getData()
     }, [])
+
+    const increaseFontSize = () => {
+        setFontSize(fontSize + 2);
+    };
+
+    const decreaseFontSize = () => {
+        setFontSize(fontSize - 2);
+    };
 
     // Handle press function for Tts Speak 
     const handlePress = () => {
@@ -70,26 +79,34 @@ const BookDetails = ({ route }) => {
                 ({ theme }) => (
                     <View style={theme.bookDetails.mainContainer}>
 
-
                         <View style={theme.bookDetails.container}>
                             <Icon name="navigate-before" size={50} style={theme.bookDetails.navigateBeforeIcon} onPress={() => { setSpeak(false), navigation.goBack() }}></Icon>
                             <Text style={theme.bookDetails.nameText} >{item.name}</Text>
                             <Icon name={speak ? "hearing-disabled" : "hearing"} style={theme.bookDetails.hearingIcon} size={30} onPress={() => subscribed ? setSpeak(!speak) : setVisible(true)} />
                         </View>
 
+                        <View>
+                            <Icon name="add" size={40} onPress={() => increaseFontSize()} style={theme.bookDetails.addIcon}></Icon>
+                            <Icon name="minimize" size={40} style={theme.bookDetails.minimize} onPress={() => decreaseFontSize()}></Icon>
+                        </View>
 
                         <View style={theme.bookDetails.imageConatiner}>
                             <Image source={item.req} style={theme.bookDetails.image}></Image>
                         </View>
 
-                           
                         <ScrollView>
-                          
-                                <Text style={theme.bookDetails.mainText}> {subscribed ? item.content : textTruncate(item.content)} {!subscribed && <Text onPress={() => setVisible(true)} style={theme.bookDetails.readMoreText}>Read More....</Text>} </Text>
-                             
-                        </ScrollView>
-                            
+                            <Text style={{
+                                alignSelf: "center",
+                                fontSize: fontSize,
+                                fontWeight: "700",
+                                marginBottom: 90,
+                                padding: 27,
+                                textAlign: "justify",
+                                overflow: "hidden",
+                                marginTop:50,
+                            }}> {subscribed ? item.content : textTruncate(item.content)} {!subscribed && <Text onPress={() => setVisible(true)} style={theme.bookDetails.readMoreText}>Read More....</Text>} </Text>
 
+                        </ScrollView>
 
                         <Overlay
                             animationType="fade"
@@ -107,7 +124,7 @@ const BookDetails = ({ route }) => {
                     </View >
                 )
             }
-        </ThemeConsumer>
+        </ThemeConsumer >
     )
 }
 
