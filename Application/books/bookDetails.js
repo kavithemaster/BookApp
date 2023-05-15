@@ -100,7 +100,7 @@ const BookDetails = ({ route }) => {
                         >
                             <View style={theme.bookDetails.overlayContainer}>
                                 <Text style={theme.bookDetails.subscribeText}>Subscribe/Buy to read this Book</Text>
-                                <Image source={require("../Assets/BookDetails/buy.gif")} style={theme.bookDetails.overlayGif} onPress={() => navigation.navigate("PaymentPage", item)}></Image>
+                                <Image source={require("../Assets/Book_Details/buy.gif")} style={theme.bookDetails.overlayGif} onPress={() => navigation.navigate("PaymentPage", item)}></Image>
                                 <Text onPress={() => navigation.navigate("PaymentPage", item)} style={theme.bookDetails.clickHereText}>Click Here</Text>
                             </View>
                         </Overlay>

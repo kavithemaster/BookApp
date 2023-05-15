@@ -61,7 +61,7 @@ const Login = () => {
           valid = true
           await AsyncStorage.setItem('login', 'true')
           await AsyncStorage.setItem('user', JSON.stringify(uData))
-          navigation.navigate('mainContents')
+          navigation.navigate('MainContents')
         }
       })
       if (!valid) {

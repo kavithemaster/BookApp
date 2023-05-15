@@ -5,7 +5,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import AppContext from './Appcontext';
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import Splash from "./Application/splash";
-import Sign_In_Up from './Application/signInUp/signInUp';
+import SignInUp from './Application/signInUp/signInUp';
 import AboutUs from './Application/signInUp/aboutUs';
 import MainContents from "./Application/mainContent";
 import BookCategory from './Application/books/bookCategory';
@@ -88,7 +88,7 @@ const App = () => {
                   header: () => null
                 }}
               >
-                <Stack.Screen name='mainContents' component={MainContents} />
+                <Stack.Screen name='MainContents' component={MainContents} />
                 <Stack.Screen name='BookCategory' component={BookCategory} />
                 <Stack.Screen name='Actions' component={Actions} />
                 <Stack.Screen name='Horrer' component={Horrer} />
@@ -109,7 +109,7 @@ const App = () => {
                   header: () => null
                 }}
               >
-                <Stack.Screen name='Sign_In_Up' component={Sign_In_Up} />
+                <Stack.Screen name='SignInUp' component={SignInUp} />
               <Stack.Screen name='AboutUs' component={AboutUs} />
               </Stack.Navigator>
             </NavigationContainer>

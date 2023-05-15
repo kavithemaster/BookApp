@@ -25,7 +25,7 @@ const PaymentPage = ({ route }) => {
         }, 2000);
         setTimeout(()=>{
             setVisible(false)
-            navigation.navigate("mainContent")
+            navigation.navigate("MainContents")
         }, 1900)
     }
 

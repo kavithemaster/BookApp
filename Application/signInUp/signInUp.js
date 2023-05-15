@@ -7,7 +7,7 @@ import Register from "./register";
 
 const Tab = createBottomTabNavigator();
 
-const Sign_In_Up = () => {
+const SignInUp = () => {
     // Setting up Both Login and Register page screens in Bottom Tab
     return (
         <Tab.Navigator
@@ -43,4 +43,4 @@ const Sign_In_Up = () => {
     )
 }
 
-export default Sign_In_Up;
+export default SignInUp;
