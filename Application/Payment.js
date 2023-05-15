@@ -6,7 +6,7 @@ import { useNavigation } from "@react-navigation/native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import axios from "axios";
 
-const Payment_page = ({ route }) => {
+const PaymentPage = ({ route }) => {
     const navigation = useNavigation()
     // Using useState for modal
     const [visible, setVisible] = useState(false)
@@ -25,7 +25,7 @@ const Payment_page = ({ route }) => {
         }, 2000);
         setTimeout(()=>{
             setVisible(false)
-            navigation.navigate("Main_Content")
+            navigation.navigate("mainContent")
         }, 1900)
     }
 
@@ -34,20 +34,20 @@ const Payment_page = ({ route }) => {
         <ThemeConsumer>
             {
                 ({ theme }) => (
-                    <View style={theme.Payment_style.maincontainer}>
-                        <Icon name="arrow-left" size={47} onPress={() => navigation.goBack()} style={theme.Payment_style.icon} />
-                        <Text style={theme.Payment_style.subscribeBuyText}>Do you Need to Subscribe/Buy {item.name} Book</Text>
+                    <View style={theme.payment.maincontainer}>
+                        <Icon name="arrow-left" size={47} onPress={() => navigation.goBack()} style={theme.payment.icon} />
+                        <Text style={theme.payment.subscribeBuyText}>Do you Need to Subscribe/Buy {item.name} Book</Text>
                         <Overlay
                             animationType="slide"
                             transparent={true}
                             visible={visible}
-                            overlayStyle={theme.Payment_style.overLay}
+                            overlayStyle={theme.payment.overLay}
                         >
-                            <View style={theme.Payment_style.Overlay_container}>
-                                <Icon name="arrow-left" size={47} onPress={() => setVisible(false)} style={theme.Payment_style.arrowLeft} />
-                                    <Image source={require("../Application/Assets/Payments/Conformation/buy.gif")}  style={theme.Payment_style.clickGif} onPress={() => close()}></Image>
+                            <View style={theme.payment.Overlay_container}>
+                                <Icon name="arrow-left" size={47} onPress={() => setVisible(false)} style={theme.payment.arrowLeft} />
+                                    <Image source={require("../Application/Assets/Payments/Conformation/buy.gif")}  style={theme.payment.clickGif} onPress={() => close()}></Image>
                                 <TouchableOpacity>
-                                    <Text style={theme.Payment_style.getItText} onPress={()=> close()} >Get It</Text>
+                                    <Text style={theme.payment.getItText} onPress={()=> close()} >Get It</Text>
                                 </TouchableOpacity>
                             </View>
                         </Overlay>
@@ -58,16 +58,16 @@ const Payment_page = ({ route }) => {
                             visible={modalvisible}
                             overlayStyle={{ borderRadius: 20 }}
                         >
-                            <View style={theme.Payment_style.overLayContainer}>
-                                <TouchableOpacity style={theme.Payment_style.successModal}>
+                            <View style={theme.payment.overLayContainer}>
+                                <TouchableOpacity style={theme.payment.successModal}>
                                     <Avatar rounded source={require('../Application/Assets/Payments/Conformation/success.gif')} size={200} />
-                                    <Text style={theme.Payment_style.buyedText} onPress={()=> close()}>Buyed Successfully</Text>
+                                    <Text style={theme.payment.buyedText} onPress={()=> close()}>Buyed Successfully</Text>
                                 </TouchableOpacity>
                             </View>
                         </Overlay>
 
 
-                        <View style={theme.Payment_style.avatar}>
+                        <View style={theme.payment.avatar}>
                             <Avatar size={60} rounded source={require("../Application/Assets/Payments/gpay.jpg")} onPress={() => setVisible(true)} />
                             <Avatar size={60} rounded source={require("../Application/Assets/Payments/paytm.jpg")} onPress={() => setVisible(true)} />
                             <Avatar size={60} rounded source={require("../Application/Assets/Payments/phonepay.jpg")} onPress={() => setVisible(true)} />
@@ -79,4 +79,4 @@ const Payment_page = ({ route }) => {
     )
 }
 
-export default Payment_page;
+export default PaymentPage;

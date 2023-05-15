@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native";
-export const Horrer_Book_style = StyleSheet.create({
+export const actionBook = StyleSheet.create({
     mainContainer: {
         backgroundColor: "lightblue",
         marginTop: 17,

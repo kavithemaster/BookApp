@@ -1,5 +1,5 @@
-import { StyleSheet } from 'react-native'
-export const Suspence_Books_styles = StyleSheet.create({
+import { StyleSheet } from "react-native";
+export const horrerBook = StyleSheet.create({
     mainContainer: {
         backgroundColor: "lightblue",
         marginTop: 17,

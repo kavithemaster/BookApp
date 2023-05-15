@@ -5,7 +5,7 @@ import { useNavigation } from "@react-navigation/native";
 import { Rating } from 'react-native-ratings';
 import Icon from "react-native-vector-icons/MaterialIcons";
 import AppContext from "../../Appcontext";
-import VoiceRecognition from "../Voice_Search";
+import VoiceRecognition from "../voiceSearch";
 
 const Actions = () => {
     const navigation = useNavigation()
@@ -105,20 +105,20 @@ const Actions = () => {
         <ThemeConsumer>
             {
                 ({ theme }) => (
-                    <View style={theme.Action_Book_Styles.mainPage}>
-                        <Icon name="navigate-before" size={50} style={theme.Action_Book_Styles.navigateBeforeIcon} onPress={() => navigation.goBack()}></Icon>
-                        <View style={theme.Action_Book_Styles.keyboardVoiceIcon}>
+                    <View style={theme.actionBook.mainPage}>
+                        <Icon name="navigate-before" size={50} style={theme.actionBook.navigateBeforeIcon} onPress={() => navigation.goBack()}></Icon>
+                        <View style={theme.actionBook.keyboardVoiceIcon}>
                             <VoiceRecognition />
                         </View>
                         <SearchBar
-                            containerStyle={theme.Action_Book_Styles.searchBarStyle}
+                            containerStyle={theme.actionBook.searchBarStyle}
                             lightTheme
                             placeholder="Search Here"
                             placeholderTextColor="black"
                             round
                             value={search}
                             onChangeText={e => setSearch(e)}
-                            inputStyle={theme.Action_Book_Styles.searchBarInput}
+                            inputStyle={theme.actionBook.searchBarInput}
 
                         >
                         </SearchBar>
@@ -138,14 +138,14 @@ const Actions = () => {
                                 if (newVal?.includes(val)) {
                                     return (
                                         item != null ?
-                                            <View style={theme.Action_Book_Styles.mainContainer}>
-                                                <TouchableOpacity onPress={() => navigation.navigate("Book_Details", item)}>
-                                                    <ImageBackground source={item.req} style={theme.Action_Book_Styles.imageStyle}  >
-                                                        <Icon name={item.favourite ? "favorite" : "favorite-border"} size={42} style={theme.Action_Book_Styles.favouriteStyle}
+                                            <View style={theme.actionBook.mainContainer}>
+                                                <TouchableOpacity onPress={() => navigation.navigate("BookDetails", item)}>
+                                                    <ImageBackground source={item.req} style={theme.actionBook.imageStyle}  >
+                                                        <Icon name={item.favourite ? "favorite" : "favorite-border"} size={42} style={theme.actionBook.favouriteStyle}
                                                             onPress={() => { item.favourite = !item.favourite, addtofavourite(item) }} />
                                                     </ImageBackground>
                                                 </TouchableOpacity>
-                                                <Text style={theme.Action_Book_Styles.amountStyle}>{[item.name, ("        Rs."), item.amount]}</Text>
+                                                <Text style={theme.actionBook.amountStyle}>{[item.name, ("        Rs."), item.amount]}</Text>
                                                 <View>
                                                     <Rating
                                                         type='star'
@@ -156,7 +156,7 @@ const Actions = () => {
                                                         fractions={2}
                                                         showRating={true}
                                                         ratingTextColor="red"
-                                                        style={theme.Action_Book_Styles.rating}
+                                                        style={theme.actionBook.rating}
                                                         
                                                     />
                                                 </View>

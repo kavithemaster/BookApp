@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native'
-export const Splash_Styles = StyleSheet.create({
+export const splash = StyleSheet.create({
   mainContainer: {
     malignSelf: "center",
   },

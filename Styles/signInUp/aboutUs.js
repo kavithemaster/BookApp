@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native'
 
-export const About_us_Style = StyleSheet.create({
+export const aboutUs = StyleSheet.create({
     mainContainer: {
         backgroundColor: "white",
         flex: 1,

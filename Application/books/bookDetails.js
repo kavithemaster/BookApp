@@ -7,7 +7,7 @@ import axios from "axios";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import Tts from "react-native-tts";
 
-const Book_Details = ({ route }) => {
+const BookDetails = ({ route }) => {
 
     // Getting values from previous screen buy using route
     const item = route.params
@@ -68,24 +68,24 @@ const Book_Details = ({ route }) => {
         <ThemeConsumer>
             {
                 ({ theme }) => (
-                    <View style={theme.Book_Details_Styles.mainContainer}>
+                    <View style={theme.bookDetails.mainContainer}>
 
 
-                        <View style={theme.Book_Details_Styles.container}>
-                            <Icon name="navigate-before" size={50} style={theme.Book_Details_Styles.navigateBeforeIcon} onPress={() => { setSpeak(false), navigation.goBack() }}></Icon>
-                            <Text style={theme.Book_Details_Styles.nameText} >{item.name}</Text>
-                            <Icon name={speak ? "hearing-disabled" : "hearing"} style={theme.Book_Details_Styles.hearingIcon} size={30} onPress={() => subscribed ? setSpeak(!speak) : setVisible(true)} />
+                        <View style={theme.bookDetails.container}>
+                            <Icon name="navigate-before" size={50} style={theme.bookDetails.navigateBeforeIcon} onPress={() => { setSpeak(false), navigation.goBack() }}></Icon>
+                            <Text style={theme.bookDetails.nameText} >{item.name}</Text>
+                            <Icon name={speak ? "hearing-disabled" : "hearing"} style={theme.bookDetails.hearingIcon} size={30} onPress={() => subscribed ? setSpeak(!speak) : setVisible(true)} />
                         </View>
 
 
-                        <View style={theme.Book_Details_Styles.imageConatiner}>
-                            <Image source={item.req} style={theme.Book_Details_Styles.image}></Image>
+                        <View style={theme.bookDetails.imageConatiner}>
+                            <Image source={item.req} style={theme.bookDetails.image}></Image>
                         </View>
 
                            
                         <ScrollView>
                           
-                                <Text style={theme.Book_Details_Styles.mainText}> {subscribed ? item.content : textTruncate(item.content)} {!subscribed && <Text onPress={() => setVisible(true)} style={theme.Book_Details_Styles.readMoreText}>Read More....</Text>} </Text>
+                                <Text style={theme.bookDetails.mainText}> {subscribed ? item.content : textTruncate(item.content)} {!subscribed && <Text onPress={() => setVisible(true)} style={theme.bookDetails.readMoreText}>Read More....</Text>} </Text>
                              
                         </ScrollView>
                             
@@ -95,13 +95,13 @@ const Book_Details = ({ route }) => {
                             animationType="fade"
                             transparent={true}
                             visible={visible}
-                            overlayStyle={theme.Book_Details_Styles.overlayStyle}
+                            overlayStyle={theme.bookDetails.overlayStyle}
                             onBackdropPress={() => { setVisible(false) }}
                         >
-                            <View style={theme.Book_Details_Styles.overlayContainer}>
-                                <Text style={theme.Book_Details_Styles.subscribeText}>Subscribe/Buy to read this Book</Text>
-                                <Image source={require("../Assets/Book_Details/buy.gif")} style={theme.Book_Details_Styles.overlayGif} onPress={() => navigation.navigate("Payment_page", item)}></Image>
-                                <Text onPress={() => navigation.navigate("Payment_page", item)} style={theme.Book_Details_Styles.clickHereText}>Click Here</Text>
+                            <View style={theme.bookDetails.overlayContainer}>
+                                <Text style={theme.bookDetails.subscribeText}>Subscribe/Buy to read this Book</Text>
+                                <Image source={require("../Assets/BookDetails/buy.gif")} style={theme.bookDetails.overlayGif} onPress={() => navigation.navigate("PaymentPage", item)}></Image>
+                                <Text onPress={() => navigation.navigate("PaymentPage", item)} style={theme.bookDetails.clickHereText}>Click Here</Text>
                             </View>
                         </Overlay>
                     </View >
@@ -111,4 +111,4 @@ const Book_Details = ({ route }) => {
     )
 }
 
-export default Book_Details
+export default BookDetails

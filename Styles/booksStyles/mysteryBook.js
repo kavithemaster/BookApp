@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native'
 
-export const Mystery_Book_Styles = StyleSheet.create({
+export const mysteryBook = StyleSheet.create({
     mainContainer: {
         backgroundColor: "lightblue",
         marginTop: 17,

@@ -3,7 +3,7 @@ import { FlatList, ImageBackground, TouchableOpacity, View } from "react-native"
 import { Text, ThemeConsumer } from "react-native-elements"
 import { useNavigation } from "@react-navigation/native";
 
-const Book_Category = () => {
+const BookCategory = () => {
     const navigation = useNavigation()
     // Array of Datas 
     const items = [
@@ -54,10 +54,10 @@ const Book_Category = () => {
                         <FlatList
                             data={items}
                             renderItem={({ item }) =>
-                                <View style={theme.Book_Page_styles.mainContainer}>
-                                    <Text style={theme.Book_Page_styles.text} onPress={()=> navigation.navigate(item.action)}>{item.name}</Text>
-                                    <ImageBackground source={item.req} style={theme.Book_Page_styles.image}>
-                                        <TouchableOpacity style={theme.Book_Page_styles.opacity} onPress={() => navigation.navigate(item.action)}>
+                                <View style={theme.bookPage.mainContainer}>
+                                    <Text style={theme.bookPage.text} onPress={()=> navigation.navigate(item.action)}>{item.name}</Text>
+                                    <ImageBackground source={item.req} style={theme.bookPage.image}>
+                                        <TouchableOpacity style={theme.bookPage.opacity} onPress={() => navigation.navigate(item.action)}>
                                         </TouchableOpacity>
                                     </ImageBackground>
                                 </View>
@@ -74,4 +74,4 @@ const Book_Category = () => {
 }
 
 
-export default Book_Category
+export default BookCategory

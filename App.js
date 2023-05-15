@@ -4,22 +4,22 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import AppContext from './Appcontext';
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import Splash from './Application/Splash';
-import Sign_In_Up from './Application/Sign_in_up/Sign_In_Up';
-import AboutUs from './Application/Sign_in_up/About_us';
-import Main_Content from './Application/Main_Content';
-import Book_Category from './Application/Books/Book_Category';
-import Actions from './Application/Books/Action_Books';
-import Horrer from './Application/Books/Horrer_Books';
-import Suspense from './Application/Books/Suspense_Books';
-import Mystery from './Application/Books/Mystery_Books';
-import Comedy from './Application/Books/Comedy_Books';
-import Love from './Application/Books/Love_Books';
-import VoiceRecognition from './Application/Voice_Search';
-import Favourite from './Application/Favourite';
-import Profile from './Application/Profile';
-import Payment_page from './Application/Payment';
-import Book_Details from "./Application/Books/Book_Details";
+import Splash from "./Application/splash";
+import Sign_In_Up from './Application/signInUp/signInUp';
+import AboutUs from './Application/signInUp/aboutUs';
+import MainContents from "./Application/mainContent";
+import BookCategory from './Application/books/bookCategory';
+import Actions from './Application/books/actionBooks';
+import Horrer from './Application/books/horrerBooks';
+import Suspense from './Application/books/suspenseBooks';
+import Mystery from './Application/books/mysteryBooks';
+import Comedy from './Application/books/comedyBooks';
+import Love from './Application/books/loveBooks';
+import VoiceRecognition from './Application/voiceSearch';
+import Favourite from "./Application/favourite";
+import Profile from './Application/profile';
+import PaymentPage from "./Application/payment";
+import BookDetails from "./Application/books/bookDetails";
 import Theme from './Themes';
 
 // Creating Stack Navigator
@@ -88,8 +88,8 @@ const App = () => {
                   header: () => null
                 }}
               >
-                <Stack.Screen name='Main_Content' component={Main_Content} />
-                <Stack.Screen name='Book_Category' component={Book_Category} />
+                <Stack.Screen name='mainContents' component={MainContents} />
+                <Stack.Screen name='BookCategory' component={BookCategory} />
                 <Stack.Screen name='Actions' component={Actions} />
                 <Stack.Screen name='Horrer' component={Horrer} />
                 <Stack.Screen name='Suspense' component={Suspense} />
@@ -99,8 +99,8 @@ const App = () => {
                 <Stack.Screen name='VoiceRecognition' component={VoiceRecognition} />
                 <Stack.Screen name='Favourite' component={Favourite} />
                 <Stack.Screen name='Profile' component={Profile} />
-                <Stack.Screen name='Payment_page' component={Payment_page} />
-                <Stack.Screen name='Book_Details' component={Book_Details} />
+                <Stack.Screen name='PaymentPage' component={PaymentPage} />
+                <Stack.Screen name='BookDetails' component={BookDetails} />
 
               </Stack.Navigator>
             </NavigationContainer> : <NavigationContainer>

@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native"
 
-export const Comedy_Book_Styles = StyleSheet.create({
+export const loveBook = StyleSheet.create({
     mainContainer: {
         backgroundColor: "white",
         flex:1,
@@ -24,7 +24,7 @@ export const Comedy_Book_Styles = StyleSheet.create({
         alignSelf: "center",
         marginTop: 590,
         borderRadius: 30,
-        position: "absolute",        
+        position: "absolute",
     },
     buttonText: {
         fontSize: 30,
@@ -32,7 +32,6 @@ export const Comedy_Book_Styles = StyleSheet.create({
         alignSelf: "center",
         color: "white",
         fontWeight: "bold",
-        padding:5,
     },
     image: {
         width: '80%',

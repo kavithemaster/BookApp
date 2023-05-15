@@ -5,7 +5,7 @@ import { useNavigation } from "@react-navigation/native";
 import { Rating } from 'react-native-ratings';
 import Icon from "react-native-vector-icons/MaterialIcons";
 import AppContext from "../../Appcontext";
-import VoiceRecognition from "../Voice_Search";
+import VoiceRecognition from "../voiceSearch";
 
 const Horrer = () => {
 
@@ -96,20 +96,20 @@ const Horrer = () => {
         <ThemeConsumer>
             {
                 ({ theme }) => (
-                    <View style={theme.Horrer_Book_style.mainPage}>
-                        <Icon name="navigate-before" size={50} style={theme.Horrer_Book_style.navigateBeforeIcon} onPress={() => navigation.goBack()}></Icon>
-                        <View style={theme.Horrer_Book_style.keyboardVoiceIcon}>
+                    <View style={theme.horrerBook.mainPage}>
+                        <Icon name="navigate-before" size={50} style={theme.horrerBook.navigateBeforeIcon} onPress={() => navigation.goBack()}></Icon>
+                        <View style={theme.horrerBook.keyboardVoiceIcon}>
                             <VoiceRecognition />
                         </View>
                         <SearchBar
-                            containerStyle={theme.Horrer_Book_style.searchBarStyle}
+                            containerStyle={theme.horrerBook.searchBarStyle}
                             lightTheme
                             placeholder="Search Here"
                             placeholderTextColor="black"
                             round
                             value={search}
                             onChangeText={e => setSearch(e)}
-                            inputStyle={theme.Horrer_Book_style.searchBarInput}
+                            inputStyle={theme.horrerBook.searchBarInput}
 
                         >
                         </SearchBar>
@@ -129,14 +129,14 @@ const Horrer = () => {
                                 if (newVal?.includes(val)) {
                                     return (
                                         item != null ?
-                                            <View style={theme.Horrer_Book_style.mainContainer}>
-                                                <TouchableOpacity onPress={() => navigation.navigate("Book_Details", item)}>
-                                                    <ImageBackground source={item.req} style={theme.Horrer_Book_style.imageStyle}  >
-                                                        <Icon name={item.favourite ? "favorite" : "favorite-border"} size={42} style={theme.Horrer_Book_style.favouriteStyle}
+                                            <View style={theme.horrerBook.mainContainer}>
+                                                <TouchableOpacity onPress={() => navigation.navigate("BookDetails", item)}>
+                                                    <ImageBackground source={item.req} style={theme.horrerBook.imageStyle}  >
+                                                        <Icon name={item.favourite ? "favorite" : "favorite-border"} size={42} style={theme.horrerBook.favouriteStyle}
                                                             onPress={() => { item.favourite = !item.favourite, addtofavourite(item) }} />
                                                     </ImageBackground>
                                                 </TouchableOpacity>
-                                                <Text style={theme.Horrer_Book_style.amountStyle}>{[item.name, ("        Rs."), item.amount]}</Text>
+                                                <Text style={theme.horrerBook.amountStyle}>{[item.name, ("        Rs."), item.amount]}</Text>
                                                 <View>
                                                     <Rating
                                                         type='star'
@@ -147,7 +147,7 @@ const Horrer = () => {
                                                         fractions={2}
                                                         showRating={true}
                                                         ratingTextColor="red"
-                                                        style={theme.Horrer_Book_style.rating}
+                                                        style={theme.horrerBook.rating}
                                                         
                                                     />
                                                 </View>

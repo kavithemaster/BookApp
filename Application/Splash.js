@@ -7,8 +7,8 @@ const Splash = () => {
     <ThemeConsumer>
       {
         ({ theme }) => (
-          <View style={theme.Splash_Styles.mainContainer}>
-            <ImageBackground source={require("../Application/Assets/man.gif")} style={theme.Splash_Styles.image}>
+          <View style={theme.splash.mainContainer}>
+            <ImageBackground source={require("../Application/Assets/man.gif")} style={theme.splash.image}>
             </ImageBackground>
           </View>
         )

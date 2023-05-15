@@ -25,17 +25,17 @@ const Favourite = () => {
                 ({ theme }) => (
                     <View>
                         <View style={{position:"absolute", backgroundColor:"white", flex:1}}>
-                            <Image source={require("../Application/Assets/favorite.gif")} style={theme.Favourite_styles.favouriteGif} ></Image>
-                            <Text style={theme.Favourite_styles.text}>You didn't add any Favourite Books please go back and add it</Text>
+                            <Image source={require("../Application/Assets/favorite.gif")} style={theme.favourite.favouriteGif} ></Image>
+                            <Text style={theme.favourite.text}>You didn't add any Favourite Books please go back and add it</Text>
                         </View>
-                        <View style={theme.Favourite_styles.maincontainer}>
+                        <View style={theme.favourite.maincontainer}>
                             <ScrollView>
                                 {favourite.map(item => {
                                     return (
                                         <View key={item.id}>
-                                            <TouchableOpacity onPress={() => navigation.navigate("Book_Details", item)}>
-                                                <ImageBackground source={item.req} style={theme.Favourite_styles.image}>
-                                                    <Icon name={"favorite"} size={37} style={theme.Favourite_styles.favouriteIcon}
+                                            <TouchableOpacity onPress={() => navigation.navigate("BookDetails", item)}>
+                                                <ImageBackground source={item.req} style={theme.favourite.image}>
+                                                    <Icon name={"favorite"} size={37} style={theme.favourite.favouriteIcon}
                                                         onPress={() => addtofavourite(item)}
                                                     />
                                                 </ImageBackground>

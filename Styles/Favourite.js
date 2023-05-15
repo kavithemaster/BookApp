@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native'
-export const Favourite_styles = StyleSheet.create({
+export const favourite = StyleSheet.create({
     maincontainer: {
         backgroundColor: "white",
     },

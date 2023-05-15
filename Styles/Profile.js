@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native'
-export const Profile_Styles = StyleSheet.create({
+export const profile = StyleSheet.create({
     mainContainer: {
         backgroundColor: "white",
         flex: 1,

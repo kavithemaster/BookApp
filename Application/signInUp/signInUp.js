@@ -1,8 +1,8 @@
 import React from "react";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import Login from "./Login";
-import Register from "./Register";
+import Login from "./login";
+import Register from "./register";
 
 
 const Tab = createBottomTabNavigator();

@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native";
-export const Payment_style = StyleSheet.create({
+export const payment = StyleSheet.create({
     maincontainer: {
         backgroundColor: "lightblue",
         height: "100%",

@@ -61,7 +61,7 @@ const Login = () => {
           valid = true
           await AsyncStorage.setItem('login', 'true')
           await AsyncStorage.setItem('user', JSON.stringify(uData))
-          navigation.navigate('Main_Content')
+          navigation.navigate('mainContents')
         }
       })
       if (!valid) {
@@ -78,33 +78,33 @@ const Login = () => {
     <ThemeConsumer>
       {
         ({ theme }) => (
-          <View style={theme.Login_Styles.mainContainer}>
-            <Image source={require("../Assets/book.gif")} style={theme.Login_Styles.imgae}></Image>
+          <View style={theme.login.mainContainer}>
+            <Image source={require("../Assets/book.gif")} style={theme.login.imgae}></Image>
 
-            <View style={theme.Login_Styles.container}>
-              <Text style={theme.Login_Styles.mainText} >Email Address 📧</Text>
+            <View style={theme.login.container}>
+              <Text style={theme.login.mainText} >Email Address 📧</Text>
               <TextInput
-                style={theme.Login_Styles.placeholderText}
+                style={theme.login.placeholderText}
                 onChangeText={onEmailChangeHandler}
               />
-              <Text style={theme.Login_Styles.mainText}>Password 🔑</Text>
+              <Text style={theme.login.mainText}>Password 🔑</Text>
               <TextInput
-                style={theme.Login_Styles.placeholderText}
+                style={theme.login.placeholderText}
                 onChangeText={onPasswordChangeHandler}
                 secureTextEntry={!visible}
               />
-              <Icon name={visible ? "eye" : "eye-slash"} size={25} style={theme.Login_Styles.eyeIcon}
+              <Icon name={visible ? "eye" : "eye-slash"} size={25} style={theme.login.eyeIcon}
                 onPress={() => { setVisible(!visible) }}
               />
-              <Text style={theme.Login_Styles.signupText} onPress={() => navigation.navigate("Register")}>Sign Up with us </Text>
+              <Text style={theme.login.signupText} onPress={() => navigation.navigate("Register")}>Sign Up with us </Text>
             </View>
 
-            <TouchableOpacity onPress={onAddHandler} style={theme.Login_Styles.loginOpacity}>
-              <Text style={theme.Login_Styles.loginText}>Login 🔓</Text>
+            <TouchableOpacity onPress={onAddHandler} style={theme.login.loginOpacity}>
+              <Text style={theme.login.loginText}>Login 🔓</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity onPress={() => navigation.navigate("AboutUs")} style={theme.Login_Styles.aboutContanier}>
-              <Text style={theme.Login_Styles.aboutText}>About Us !</Text>
+            <TouchableOpacity onPress={() => navigation.navigate("AboutUs")} style={theme.login.aboutContanier}>
+              <Text style={theme.login.aboutText}>About Us !</Text>
             </TouchableOpacity>
           </View>
         )

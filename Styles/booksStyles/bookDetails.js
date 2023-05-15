@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native'
-export const Book_Details_Styles = StyleSheet.create({
+export const bookDetails = StyleSheet.create({
     mainContainer: {
         backgroundColor: "white",
         flex: 1,

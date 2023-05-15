@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native'
-export const Register_styles = StyleSheet.create({
+export const register = StyleSheet.create({
   mainContainer: {
     backgroundColor: "white",
     height: "100%",

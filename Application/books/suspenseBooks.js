@@ -5,7 +5,7 @@ import { useNavigation } from "@react-navigation/native";
 import { Rating } from 'react-native-ratings';
 import Icon from "react-native-vector-icons/MaterialIcons";
 import AppContext from "../../Appcontext";
-import VoiceRecognition from "../Voice_Search";
+import VoiceRecognition from "../voiceSearch";
 
 const Suspense = () => {
     const navigation = useNavigation()
@@ -94,20 +94,20 @@ const Suspense = () => {
         <ThemeConsumer>
             {
                 ({ theme }) => (
-                    <View style={theme.Suspence_Books_styles.mainPage}>
-                    <Icon name="navigate-before" size={50} style={theme.Suspence_Books_styles.navigateBeforeIcon} onPress={() => navigation.goBack()}></Icon>
-                    <View style={theme.Suspence_Books_styles.keyboardVoiceIcon}>
+                    <View style={theme.suspenceBook.mainPage}>
+                    <Icon name="navigate-before" size={50} style={theme.suspenceBook.navigateBeforeIcon} onPress={() => navigation.goBack()}></Icon>
+                    <View style={theme.suspenceBook.keyboardVoiceIcon}>
                         <VoiceRecognition />
                     </View>
                     <SearchBar
-                        containerStyle={theme.Suspence_Books_styles.searchBarStyle}
+                        containerStyle={theme.suspenceBook.searchBarStyle}
                         lightTheme
                         placeholder="Search Here"
                         placeholderTextColor="black"
                         round
                         value={search}
                         onChangeText={e => setSearch(e)}
-                        inputStyle={theme.Suspence_Books_styles.searchBarInput}
+                        inputStyle={theme.suspenceBook.searchBarInput}
 
                     >
                     </SearchBar>
@@ -127,14 +127,14 @@ const Suspense = () => {
                             if (newVal?.includes(val)) {
                                 return (
                                     item != null ?
-                                        <View style={theme.Suspence_Books_styles.mainContainer}>
-                                            <TouchableOpacity onPress={() => navigation.navigate("Book_Details", item)}>
-                                                <ImageBackground source={item.req} style={theme.Suspence_Books_styles.imageStyle}  >
-                                                    <Icon name={item.favourite ? "favorite" : "favorite-border"} size={42} style={theme.Suspence_Books_styles.favouriteStyle}
+                                        <View style={theme.suspenceBook.mainContainer}>
+                                            <TouchableOpacity onPress={() => navigation.navigate("BookDetails", item)}>
+                                                <ImageBackground source={item.req} style={theme.suspenceBook.imageStyle}  >
+                                                    <Icon name={item.favourite ? "favorite" : "favorite-border"} size={42} style={theme.suspenceBook.favouriteStyle}
                                                         onPress={() => { item.favourite = !item.favourite, addtofavourite(item) }} />
                                                 </ImageBackground>
                                             </TouchableOpacity>
-                                            <Text style={theme.Suspence_Books_styles.amountStyle}>{[item.name, ("        Rs."), item.amount]}</Text>
+                                            <Text style={theme.suspenceBook.amountStyle}>{[item.name, ("        Rs."), item.amount]}</Text>
                                             <View>
                                                 <Rating
                                                     type='star'
@@ -145,7 +145,7 @@ const Suspense = () => {
                                                     fractions={2}
                                                     showRating={true}
                                                     ratingTextColor="red"
-                                                    style={theme.Suspence_Books_styles.rating}
+                                                    style={theme.suspenceBook.rating}
                                                     
                                                 />
                                             </View>

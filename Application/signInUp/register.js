@@ -1,5 +1,5 @@
-import React, {useState, useContext } from "react";
-import { Text, View, TextInput, TouchableOpacity, Image, ScrollView ,ToastAndroid} from "react-native";
+import React, { useState, useContext } from "react";
+import { Text, View, TextInput, TouchableOpacity, Image, ScrollView, ToastAndroid } from "react-native";
 import { ThemeConsumer } from "react-native-elements";
 import Icon from "react-native-vector-icons/FontAwesome";
 import { Formik } from "formik";
@@ -41,17 +41,17 @@ const validation = Yup.object({
 
 
 const Register = () => {
-  const {setLoad, load} = useContext(AppContext)
+  const { setLoad, load } = useContext(AppContext)
 
   const navigation = useNavigation()
   // Posting user data values to firebase 
   const onAddHandler = async (values) => {
-    const res = await axios.post("https://book-2bceb-default-rtdb.firebaseio.com/books.json", values) 
-    setLoad(!load)   
+    const res = await axios.post("https://book-2bceb-default-rtdb.firebaseio.com/books.json", values)
+    setLoad(!load)
     navigation.goBack()
-    
+
     ToastAndroid.show(
-      "Registred Successfully", ToastAndroid.BOTTOM,ToastAndroid.SHORT
+      "Registred Successfully", ToastAndroid.BOTTOM, ToastAndroid.SHORT
     )
   }
 
@@ -77,79 +77,79 @@ const Register = () => {
             <ThemeConsumer>
               {
                 ({ theme }) => (
-                  <View style={theme.Register_styles.mainContainer}>
-                    <Image source={require("../Assets/book.gif")} style={theme.Register_styles.gif} ></Image>
+                  <View style={theme.register.mainContainer}>
+                    <Image source={require("../Assets/book.gif")} style={theme.register.gif} ></Image>
                     <ScrollView>
-                      <View style={theme.Register_styles.container}>
-                        <View style={theme.Register_styles.inputContainer}>
-                          <Text style={theme.Register_styles.mainText}>Email Address</Text>
+                      <View style={theme.register.container}>
+                        <View style={theme.register.inputContainer}>
+                          <Text style={theme.register.mainText}>Email Address</Text>
                           <TextInput
-                            style={theme.Register_styles.placeholderText}
+                            style={theme.register.placeholderText}
                             onChangeText={handleChange("Email")}
                             value={Email}
                             keyboardType="email-address"
                             onBlur={handleBlur("Email")}
                           />
                           {errors ? (
-                            <Text style={theme.Register_styles.errorText}>{touched.Email && errors.Email}</Text>
+                            <Text style={theme.register.errorText}>{touched.Email && errors.Email}</Text>
                           ) : null}
-                          <Text style={theme.Register_styles.mainText}>User Name</Text>
+                          <Text style={theme.register.mainText}>User Name</Text>
                           <TextInput
-                            style={theme.Register_styles.placeholderText}
+                            style={theme.register.placeholderText}
                             onChangeText={handleChange("UserName")}
                             value={UserName}
                             onBlur={handleBlur("UserName")}
                           />
                           {errors ? (
-                            <Text style={theme.Register_styles.errorText}>{touched.UserName && errors.UserName}</Text>
+                            <Text style={theme.register.errorText}>{touched.UserName && errors.UserName}</Text>
                           ) : null}
-                          <Text style={theme.Register_styles.mainText}>Phone Number</Text>
+                          <Text style={theme.register.mainText}>Phone Number</Text>
                           <TextInput
-                            style={theme.Register_styles.placeholderText}
+                            style={theme.register.placeholderText}
                             onChangeText={handleChange("PhoneNumber")}
                             value={PhoneNumber}
                             keyboardType="numeric"
                             onBlur={handleBlur("PhoneNumber")}
                           />
                           {errors ? (
-                            <Text style={theme.Register_styles.errorText}>{touched.PhoneNumber && errors.PhoneNumber}</Text>
+                            <Text style={theme.register.errorText}>{touched.PhoneNumber && errors.PhoneNumber}</Text>
                           ) : null}
-                          <Text style={theme.Register_styles.mainText}>Password</Text>
+                          <Text style={theme.register.mainText}>Password</Text>
                           <TextInput
-                            style={theme.Register_styles.placeholderText}
+                            style={theme.register.placeholderText}
                             secureTextEntry={!visible}
                             onChangeText={handleChange("Password")}
                             value={Password}
                             onBlur={handleBlur("Password")}
                           />
-                          <Icon name={visible ? "eye" : "eye-slash"} size={25} style={theme.Register_styles.eyeIcon}
+                          <Icon name={visible ? "eye" : "eye-slash"} size={25} style={theme.register.eyeIcon}
                             onPress={() => { setVisible(!visible) }}
                           />
                           {errors ? (
-                            <Text style={theme.Register_styles.errorText}>{touched.Password && errors.Password}</Text>
+                            <Text style={theme.register.errorText}>{touched.Password && errors.Password}</Text>
                           ) : null}
-                          <Text style={theme.Register_styles.mainText}>Conform Password</Text>
+                          <Text style={theme.register.mainText}>Conform Password</Text>
                           <TextInput
-                            style={theme.Register_styles.placeholderText}
+                            style={theme.register.placeholderText}
                             onChangeText={handleChange("ConformPassword")}
                             value={ConformPassword}
                             secureTextEntry={!anotherVisible}
                             onBlur={handleBlur("ConformPassword")}
                           />
-                          <Icon name={anotherVisible ? "eye" : "eye-slash"} size={25} style={theme.Register_styles.eyeIcon1}
+                          <Icon name={anotherVisible ? "eye" : "eye-slash"} size={25} style={theme.register.eyeIcon1}
                             onPress={() => { setAnotherVisible(!anotherVisible) }}
                           />
                           {errors ? (
-                            <Text style={theme.Register_styles.errorText}>{touched.ConformPassword && errors.ConformPassword}</Text>
+                            <Text style={theme.register.errorText}>{touched.ConformPassword && errors.ConformPassword}</Text>
                           ) : null}
-                          <TouchableOpacity onPress={handleSubmit} style={theme.Register_styles.registerOpacity} >
-                            <Text style={theme.Register_styles.registerText}>
+                          <TouchableOpacity onPress={handleSubmit} style={theme.register.registerOpacity} >
+                            <Text style={theme.register.registerText}>
                               Register 🗂️
                             </Text>
                           </TouchableOpacity>
-                          <Image source={require('../Assets/Register_images/google.jpg')} style={theme.Register_styles.googleImage}></Image>
-                          <Image source={require('../Assets/Register_images/Facebook.jpg')} style={theme.Register_styles.faceBookImage}></Image>
-                          <Image source={require('../Assets/Register_images/Microsoft.jpg')} style={theme.Register_styles.microsoftImage}></Image>
+                          <Image source={require('../Assets/Register_images/google.jpg')} style={theme.register.googleImage}></Image>
+                          <Image source={require('../Assets/Register_images/Facebook.jpg')} style={theme.register.faceBookImage}></Image>
+                          <Image source={require('../Assets/Register_images/Microsoft.jpg')} style={theme.register.microsoftImage}></Image>
                         </View>
                       </View>
                     </ScrollView>
