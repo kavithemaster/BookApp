@@ -3,14 +3,14 @@ export const Favourite_styles = StyleSheet.create({
     maincontainer: {
         backgroundColor: "white",
     },
-    Image_style: {
+    image: {
         height: 380,
         width: "76%",
         marginTop: 27,
         marginBottom: 40,
         marginHorizontal:90,
     },
-    favourite_icon: {
+    favouriteIcon: {
         color: 'red',
         backgroundColor: "white",
         width: 40,
@@ -33,7 +33,7 @@ export const Favourite_styles = StyleSheet.create({
         width:"70%",
         marginLeft:10,
     },
-    favourite_gif:{
+    favouriteGif:{
         width:"70%",
         height:250,
         borderRadius:300,

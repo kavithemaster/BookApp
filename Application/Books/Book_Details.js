@@ -69,21 +69,27 @@ const Book_Details = ({ route }) => {
             {
                 ({ theme }) => (
                     <View style={theme.Book_Details_Styles.mainContainer}>
+
+
                         <View style={theme.Book_Details_Styles.container}>
-                            <Icon name="navigate-before" size={50} style={theme.Book_Details_Styles.navigate_before_icon} onPress={() => { setSpeak(false), navigation.goBack() }}></Icon>
-                            <Text style={theme.Book_Details_Styles.name_text} >{item.name}</Text>
+                            <Icon name="navigate-before" size={50} style={theme.Book_Details_Styles.navigateBeforeIcon} onPress={() => { setSpeak(false), navigation.goBack() }}></Icon>
+                            <Text style={theme.Book_Details_Styles.nameText} >{item.name}</Text>
                             <Icon name={speak ? "hearing-disabled" : "hearing"} style={theme.Book_Details_Styles.hearingIcon} size={30} onPress={() => subscribed ? setSpeak(!speak) : setVisible(true)} />
                         </View>
+
+
                         <View style={theme.Book_Details_Styles.imageConatiner}>
                             <Image source={item.req} style={theme.Book_Details_Styles.image}></Image>
                         </View>
+
+                           
                         <ScrollView>
-                            <View>
-                                <View>
-                                    <Text style={theme.Book_Details_Styles.main_text}> {subscribed ? item.content : textTruncate(item.content)} {!subscribed && <Text onPress={() => setVisible(true)} style={theme.Book_Details_Styles.read_more_text}>Read More....</Text>} </Text>
-                                </View>
-                            </View>
+                          
+                                <Text style={theme.Book_Details_Styles.mainText}> {subscribed ? item.content : textTruncate(item.content)} {!subscribed && <Text onPress={() => setVisible(true)} style={theme.Book_Details_Styles.readMoreText}>Read More....</Text>} </Text>
+                             
                         </ScrollView>
+                            
+
 
                         <Overlay
                             animationType="fade"
@@ -92,10 +98,10 @@ const Book_Details = ({ route }) => {
                             overlayStyle={theme.Book_Details_Styles.overlayStyle}
                             onBackdropPress={() => { setVisible(false) }}
                         >
-                            <View style={theme.Book_Details_Styles.overlay_container}>
-                                <Text style={theme.Book_Details_Styles.subscribe_text}>Subscribe/Buy to read this Book</Text>
-                                <Image source={require("../Assets/Book_Details/buy.gif")} style={theme.Book_Details_Styles.overlay_gif} onPress={() => navigation.navigate("Payment_page", item)}></Image>
-                                <Text onPress={() => navigation.navigate("Payment_page", item)} style={theme.Book_Details_Styles.click_here_text}>Click Here</Text>
+                            <View style={theme.Book_Details_Styles.overlayContainer}>
+                                <Text style={theme.Book_Details_Styles.subscribeText}>Subscribe/Buy to read this Book</Text>
+                                <Image source={require("../Assets/Book_Details/buy.gif")} style={theme.Book_Details_Styles.overlayGif} onPress={() => navigation.navigate("Payment_page", item)}></Image>
+                                <Text onPress={() => navigation.navigate("Payment_page", item)} style={theme.Book_Details_Styles.clickHereText}>Click Here</Text>
                             </View>
                         </Overlay>
                     </View >

@@ -106,19 +106,19 @@ const Actions = () => {
             {
                 ({ theme }) => (
                     <View style={theme.Action_Book_Styles.mainPage}>
-                        <Icon name="navigate-before" size={50} style={theme.Action_Book_Styles.navigate_before_icon} onPress={() => navigation.goBack()}></Icon>
-                        <View style={theme.Action_Book_Styles.keyboard_voice_icon}>
+                        <Icon name="navigate-before" size={50} style={theme.Action_Book_Styles.navigateBeforeIcon} onPress={() => navigation.goBack()}></Icon>
+                        <View style={theme.Action_Book_Styles.keyboardVoiceIcon}>
                             <VoiceRecognition />
                         </View>
                         <SearchBar
-                            containerStyle={theme.Action_Book_Styles.SearchBar_style}
+                            containerStyle={theme.Action_Book_Styles.searchBarStyle}
                             lightTheme
                             placeholder="Search Here"
                             placeholderTextColor="black"
                             round
                             value={search}
                             onChangeText={e => setSearch(e)}
-                            inputStyle={theme.Action_Book_Styles.SearchBar_input}
+                            inputStyle={theme.Action_Book_Styles.searchBarInput}
 
                         >
                         </SearchBar>
@@ -140,12 +140,12 @@ const Actions = () => {
                                         item != null ?
                                             <View style={theme.Action_Book_Styles.mainContainer}>
                                                 <TouchableOpacity onPress={() => navigation.navigate("Book_Details", item)}>
-                                                    <ImageBackground source={item.req} style={theme.Action_Book_Styles.Image_style}  >
-                                                        <Icon name={item.favourite ? "favorite" : "favorite-border"} size={42} style={theme.Action_Book_Styles.Fav_Style}
+                                                    <ImageBackground source={item.req} style={theme.Action_Book_Styles.imageStyle}  >
+                                                        <Icon name={item.favourite ? "favorite" : "favorite-border"} size={42} style={theme.Action_Book_Styles.favouriteStyle}
                                                             onPress={() => { item.favourite = !item.favourite, addtofavourite(item) }} />
                                                     </ImageBackground>
                                                 </TouchableOpacity>
-                                                <Text style={theme.Action_Book_Styles.amount_style}>{[item.name, ("        Rs."), item.amount]}</Text>
+                                                <Text style={theme.Action_Book_Styles.amountStyle}>{[item.name, ("        Rs."), item.amount]}</Text>
                                                 <View>
                                                     <Rating
                                                         type='star'

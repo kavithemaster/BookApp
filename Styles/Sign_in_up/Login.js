@@ -13,7 +13,7 @@ export const Login_Styles = StyleSheet.create({
     borderTopRightRadius: 160,
     borderBottomRightRadius: 160,
   },
-  main_text: {
+  mainText: {
     fontSize: 19,
     fontWeight: "bold",
     textShadowRadius: 4,
@@ -21,7 +21,7 @@ export const Login_Styles = StyleSheet.create({
     color: "black",
     marginTop: 35,
   },
-  placeholder_text: {
+  placeholderText: {
     fontSize: 19,
     marginLeft: 16,
     color: "black",
@@ -29,14 +29,14 @@ export const Login_Styles = StyleSheet.create({
     width: "80%",
     fontWeight: "bold",
   },
-  signup_text: {
+  signupText: {
     fontSize: 19,
     marginLeft: 100,
     marginTop: 20,
     fontWeight: "bold",
     color: "darkblue",
   },
-  about_text: {
+  aboutText: {
     color: "white",
     fontSize: 20,
     textDecorationLine: "underline",
@@ -44,13 +44,13 @@ export const Login_Styles = StyleSheet.create({
     marginTop: 15,
     fontWeight: "bold",
   },
-  imgae_style: {
+  imgae: {
     position: "absolute",
     alignSelf: "center",
     width: 280,
     height: 190,
   },
-  about_contanier: {
+  aboutContanier: {
     position: "absolute",
     backgroundColor: "red",
     marginTop: 630,
@@ -60,13 +60,13 @@ export const Login_Styles = StyleSheet.create({
     borderTopLeftRadius: 80,
     borderBottomLeftRadius: 80,
   },
-  eye_icon: {
+  eyeIcon: {
     marginLeft: 280,
     marginTop: 175,
     position: "absolute",
     color: "black",
   },
-  login_opacity: {
+  loginOpacity: {
     backgroundColor: "red",
     width: "50%",
     height: 60,
@@ -75,7 +75,7 @@ export const Login_Styles = StyleSheet.create({
     borderRadius: 20,
     borderWidth: 2,
   },
-  login_text: {
+  loginText: {
     fontSize: 22,
     alignSelf: "center",
     fontWeight: "bold",

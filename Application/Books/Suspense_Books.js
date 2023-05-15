@@ -95,46 +95,47 @@ const Suspense = () => {
             {
                 ({ theme }) => (
                     <View style={theme.Suspence_Books_styles.mainPage}>
-                        <Icon name="navigate-before" size={50} style={theme.Suspence_Books_styles.navigate_before_icon} onPress={() => navigation.goBack()}></Icon>
-                        <View style={theme.Suspence_Books_styles.keyboard_voice_icon}>
-                            <VoiceRecognition />
-                        </View>
-                        <SearchBar
-                            containerStyle={theme.Suspence_Books_styles.SearchBar_style}
-                            lightTheme
-                            placeholder="Search Here"
-                            placeholderTextColor="black"
-                            round
-                            value={search}
-                            onChangeText={e => setSearch(e)}
-                            inputStyle={theme.Action_Book_Styles.SearchBar_input}
-                        >
-                        </SearchBar>
-                        <VirtualizedList
-                            getItemCount={items => items.length}
-                            keyExtractor={(item, index) => index}
-                            getItem={getItem}
-                            onEndReached={onEndReached}
-                            onEndReachedThreshold={0.01}
-                            ListFooterComponent={<ActivityIndicator size={60} />
-                            }
-                            ListFooterComponentStyle={{ marginBottom: '15%' }}
-                            data={cardItem}
-                            renderItem={({ item }) => {
-                                let val = search?.toLowerCase().replace(/\s/, '');
-                                let newVal = item?.name?.toLowerCase().replace(/\s/, '');
-                                if (newVal?.includes(val)) {
-                                    return (
-                                        item != null ?
-                                            <View style={theme.Suspence_Books_styles.mainContainer}>
-                                                <TouchableOpacity onPress={() => navigation.navigate("Book_Details", item)}>
-                                                    <ImageBackground source={item.req}
-                                                        style={theme.Suspence_Books_styles.Image_style} >
-                                                        <Icon name={item.favourite ? "favorite" : "favorite-border"} size={42} style={theme.Action_Book_Styles.Fav_Style}
-                                                            onPress={() => { item.favourite = !item.favourite, addtofavourite(item), item }} />
-                                                    </ImageBackground>
-                                                </TouchableOpacity>
-                                                <Text style={theme.Action_Book_Styles.amount_style}>{[item.name, ("        Rs."), item.amount]}</Text>
+                    <Icon name="navigate-before" size={50} style={theme.Suspence_Books_styles.navigateBeforeIcon} onPress={() => navigation.goBack()}></Icon>
+                    <View style={theme.Suspence_Books_styles.keyboardVoiceIcon}>
+                        <VoiceRecognition />
+                    </View>
+                    <SearchBar
+                        containerStyle={theme.Suspence_Books_styles.searchBarStyle}
+                        lightTheme
+                        placeholder="Search Here"
+                        placeholderTextColor="black"
+                        round
+                        value={search}
+                        onChangeText={e => setSearch(e)}
+                        inputStyle={theme.Suspence_Books_styles.searchBarInput}
+
+                    >
+                    </SearchBar>
+                    <VirtualizedList
+                        getItemCount={items => items.length}
+                        keyExtractor={(item, index) => index}
+                        getItem={getItem}
+                        onEndReached={onEndReached}
+                        onEndReachedThreshold={0.01}
+                        ListFooterComponent={<ActivityIndicator size={60} />
+                        }
+                        ListFooterComponentStyle={{ marginBottom: '15%' }}
+                        data={cardItem}
+                        renderItem={({ item }) => {
+                            let val = search?.toLowerCase().replace(/\s/, '');
+                            let newVal = item?.name?.toLowerCase().replace(/\s/, '');
+                            if (newVal?.includes(val)) {
+                                return (
+                                    item != null ?
+                                        <View style={theme.Suspence_Books_styles.mainContainer}>
+                                            <TouchableOpacity onPress={() => navigation.navigate("Book_Details", item)}>
+                                                <ImageBackground source={item.req} style={theme.Suspence_Books_styles.imageStyle}  >
+                                                    <Icon name={item.favourite ? "favorite" : "favorite-border"} size={42} style={theme.Suspence_Books_styles.favouriteStyle}
+                                                        onPress={() => { item.favourite = !item.favourite, addtofavourite(item) }} />
+                                                </ImageBackground>
+                                            </TouchableOpacity>
+                                            <Text style={theme.Suspence_Books_styles.amountStyle}>{[item.name, ("        Rs."), item.amount]}</Text>
+                                            <View>
                                                 <Rating
                                                     type='star'
                                                     ratingCount={5}
@@ -145,13 +146,15 @@ const Suspense = () => {
                                                     showRating={true}
                                                     ratingTextColor="red"
                                                     style={theme.Suspence_Books_styles.rating}
+                                                    
                                                 />
                                             </View>
-                                            : null)
-                                }
-                            }}
-                        />
-                    </View>
+                                        </View>
+                                        : null)
+                            }
+                        }}
+                    />
+                </View>
                 )
             }
         </ThemeConsumer>

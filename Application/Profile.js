@@ -58,17 +58,16 @@ const Profile = () => {
                 ({ theme }) => (
                     <View style={theme.Profile_Styles.mainContainer}>
                         <View>
-                            <Icon name="settings" size={30} style={theme.Profile_Styles.setting_icon} onPress={() => setSettingsModal(true)}></Icon>
-                            <Text style={theme.Profile_Styles.my_account_text}>My Account</Text>
+                            <Icon name="settings" size={30} style={theme.Profile_Styles.settingIcon} onPress={() => setSettingsModal(true)}></Icon>
+                            <Text style={theme.Profile_Styles.myAccountText}>My Account</Text>
                         </View>
                         <TouchableOpacity>
-                            {/* <Text style={theme.Profile_Styles.edit_text} onPress={() => setVisibility(true)}>Edit Your Profile ✎</Text> */}
                         </TouchableOpacity>
                         <View style={theme.Profile_Styles.container}>
-                            <Text style={theme.Profile_Styles.main_text} >Email Address : {userData && userData.Email} </Text>
-                            <Text style={theme.Profile_Styles.main_text} >User Name: {userData && userData.UserName} </Text>
-                            <Text style={theme.Profile_Styles.main_text} >Phone Number : {userData && userData.PhoneNumber} </Text>
-                            <TouchableOpacity style={theme.Profile_Styles.logout_maincontainer}
+                            <Text style={theme.Profile_Styles.mainText} >Email Address : {userData && userData.Email} </Text>
+                            <Text style={theme.Profile_Styles.mainText} >User Name: {userData && userData.UserName} </Text>
+                            <Text style={theme.Profile_Styles.mainText} >Phone Number : {userData && userData.PhoneNumber} </Text>
+                            <TouchableOpacity style={theme.Profile_Styles.logoutMainContainer}
                                 // AsyncStorage code validated for logout
                                 onPress={() => {
                                     Alert.alert('Alert', 'Are you Sure want to Logout ', [
@@ -91,7 +90,7 @@ const Profile = () => {
                                     ])
                                 }}
                             >
-                                <Text style={theme.Profile_Styles.logout_text}>Logout</Text>
+                                <Text style={theme.Profile_Styles.logoutText}>Logout</Text>
                             </TouchableOpacity>
 
                         </View>
@@ -103,32 +102,32 @@ const Profile = () => {
                             <Formik validationSchema={validation} initialValues={{ PhoneNumber: userData && userData.PhoneNumber, Email: userData && userData.Email, UserName: userData && userData.UserName }} onSubmit={(values) => onAddHandler(values)} >
                                 {({ values, handleChange, errors, touched, handleBlur, handleSubmit }) => {
                                     return (
-                                        <View style={theme.Profile_Styles.formik_mainContainer}>
+                                        <View style={theme.Profile_Styles.formikMainContainer}>
                                             <Text style={theme.Profile_Styles.text}> User Name  </Text>
                                             <TextInput
                                                 placeholder="User Name"
-                                                style={theme.Profile_Styles.placeholder_text}
+                                                style={theme.Profile_Styles.placeholderText}
                                                 onChangeText={handleChange("UserName")}
                                                 value={values.UserName}
                                                 onBlur={handleBlur("UserName")}
                                             />
-                                            {errors ? (<Text style={theme.Profile_Styles.error_text}>{touched.UserName && errors.UserName}</Text>) : null}
+                                            {errors ? (<Text style={theme.Profile_Styles.errorText}>{touched.UserName && errors.UserName}</Text>) : null}
 
                                             <Text style={theme.Profile_Styles.text}> Phone Number </Text>
                                             <TextInput
                                                 placeholder="Phone Number"
-                                                style={theme.Profile_Styles.placeholder_text}
+                                                style={theme.Profile_Styles.placeholderText}
                                                 onChangeText={handleChange("PhoneNumber")}
                                                 value={values.PhoneNumber}
                                                 keyboardType="numeric"
                                                 onBlur={handleBlur("PhoneNumber")}
                                             />
-                                            {errors ? (<Text style={theme.Profile_Styles.error_text}>{touched.PhoneNumber && errors.PhoneNumber}</Text>) : null}
-                                            <TouchableOpacity style={theme.Profile_Styles.submit_button}>
-                                                <Text style={theme.Profile_Styles.submit_text} onPress={handleSubmit}>Submit</Text>
+                                            {errors ? (<Text style={theme.Profile_Styles.errorText}>{touched.PhoneNumber && errors.PhoneNumber}</Text>) : null}
+                                            <TouchableOpacity style={theme.Profile_Styles.submitButton}>
+                                                <Text style={theme.Profile_Styles.submitText} onPress={handleSubmit}>Submit</Text>
                                             </TouchableOpacity>
                                             <TouchableOpacity style={theme.Profile_Styles.close}>
-                                                <Text style={theme.Profile_Styles.submit_text} onPress={() => setVisibility(false)}>Close</Text>
+                                                <Text style={theme.Profile_Styles.submitText} onPress={() => setVisibility(false)}>Close</Text>
                                             </TouchableOpacity>
 
                                         </View>
@@ -145,9 +144,9 @@ const Profile = () => {
                             visible={settingsModal}
                             onRequestClose={() => console.log("str")}
                         >
-                            <View style={theme.Profile_Styles.setting_modal}>
-                                <Text style={theme.Profile_Styles.setting_modal_text} onPress={() => { setVisibility(true), setSettingsModal(false) }}>Edit Your Profile</Text>
-                                <Text style={theme.Profile_Styles.setting_modal_text} onPress={() => setSettingsModal(false)}>Close</Text>
+                            <View style={theme.Profile_Styles.settingModal}>
+                                <Text style={theme.Profile_Styles.settingModalText} onPress={() => { setVisibility(true), setSettingsModal(false) }}>Edit Your Profile</Text>
+                                <Text style={theme.Profile_Styles.settingModalText} onPress={() => setSettingsModal(false)}>Close</Text>
 
 
                             </View>

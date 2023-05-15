@@ -5,12 +5,12 @@ export const Payment_style = StyleSheet.create({
         height: "100%",
         width: "100%"
     },
-    avatar_style: {
+    avatar: {
         flexDirection: "row",
         justifyContent: "space-evenly",
         marginTop: 80,
     },
-    icon_style: {
+    icon: {
         marginTop: 40,
         marginLeft: 20,
         color: "black",
@@ -18,7 +18,7 @@ export const Payment_style = StyleSheet.create({
     arrowLeft: {
         color: "black",
     },
-    GetIt_text: {
+    getItText: {
         fontSize: 30,
         fontStyle: "italic",
         fontWeight: "bold",
@@ -37,22 +37,22 @@ export const Payment_style = StyleSheet.create({
         height:"50%",
         resizeMode:"contain",
     },
-    overLayStyle: {
+    overLay: {
         borderRadius: 20,
         width: "90%",
         justifyContent: "center",
         height:370,
     },
-    Overlay_container1: {
+    overLayContainer: {
         width: "100%",
         height: "80%",
     },
-    success_modal: {
+    successModal: {
         alignSelf: "center",
         marginTop: 150,
         width: "100%"
     },
-    Buyed_text: {
+    buyedText: {
         fontSize: 20,
         fontStyle: "italic",
         fontWeight: "bold",

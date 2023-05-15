@@ -11,10 +11,10 @@ export const Register_styles = StyleSheet.create({
     height: 700,
     borderTopRightRadius: 400,
   },
-  input_container: {
+  inputContainer: {
     marginTop: 50,
   },
-  main_text: {
+  mainText: {
     fontSize: 19,
     fontWeight: "bold",
     textShadowRadius: 4,
@@ -23,7 +23,7 @@ export const Register_styles = StyleSheet.create({
     color: "black",
     marginTop: 5,
   },
-  placeholder_text: {
+  placeholderText: {
     fontSize: 19,
     marginLeft: 16,
     color: "black",
@@ -31,22 +31,22 @@ export const Register_styles = StyleSheet.create({
     width: "60%",
     fontWeight: "bold",
   },
-  error_text: {
+  errorText: {
     color: 'red',
     fontSize: 16,
     marginLeft: 15,
   },
-  gif_style: {
+  gif: {
     alignSelf: "center",
   },
-  register_text: {
+  registerText: {
     fontSize: 22,
     alignSelf: "center",
     fontWeight: "bold",
     marginTop: 15,
     color: "white",
   },
-  register_opacity: {
+  registerOpacity: {
     backgroundColor: "red",
     width: "50%",
     height: 60,
@@ -55,7 +55,7 @@ export const Register_styles = StyleSheet.create({
     borderRadius: 20,
     borderWidth: 2,
   },
-  google_image_style: {
+  googleImage: {
     width: 50,
     height: 50,
     borderRadius: 30,
@@ -63,7 +63,7 @@ export const Register_styles = StyleSheet.create({
     marginLeft: 320,
     position: 'absolute',
   },
-  FaceBook_image_style: {
+  faceBookImage: {
     width: 50,
     height: 50,
     borderRadius: 30,
@@ -71,7 +71,7 @@ export const Register_styles = StyleSheet.create({
     marginLeft: 320,
     position: "absolute",
   },
-  Microsoft_image_style: {
+  microsoftImage: {
     width: 50,
     height: 50,
     borderRadius: 30,
@@ -79,14 +79,14 @@ export const Register_styles = StyleSheet.create({
     marginLeft: 320,
     position: "absolute",
   },
-  eye_icon: {
-    marginLeft: 260,
+  eyeIcon: {
+    marginLeft: 220,
     marginTop: 349,
     position: "absolute",
     color: "black",
   },
-  eye_icon1: {
-    marginLeft: 260,
+  eyeIcon1: {
+    marginLeft: 220,
     marginTop: 449,
     position: "absolute",
     color: "black",

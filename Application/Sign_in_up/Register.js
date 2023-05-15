@@ -78,78 +78,78 @@ const Register = () => {
               {
                 ({ theme }) => (
                   <View style={theme.Register_styles.mainContainer}>
-                    <Image source={require("../Assets/book.gif")} style={theme.Register_styles.gif_style} ></Image>
+                    <Image source={require("../Assets/book.gif")} style={theme.Register_styles.gif} ></Image>
                     <ScrollView>
                       <View style={theme.Register_styles.container}>
-                        <View style={theme.Register_styles.input_container}>
-                          <Text style={theme.Register_styles.main_text}>Email Address</Text>
+                        <View style={theme.Register_styles.inputContainer}>
+                          <Text style={theme.Register_styles.mainText}>Email Address</Text>
                           <TextInput
-                            style={theme.Register_styles.placeholder_text}
+                            style={theme.Register_styles.placeholderText}
                             onChangeText={handleChange("Email")}
                             value={Email}
                             keyboardType="email-address"
                             onBlur={handleBlur("Email")}
                           />
                           {errors ? (
-                            <Text style={theme.Register_styles.error_text}>{touched.Email && errors.Email}</Text>
+                            <Text style={theme.Register_styles.errorText}>{touched.Email && errors.Email}</Text>
                           ) : null}
-                          <Text style={theme.Register_styles.main_text}>User Name</Text>
+                          <Text style={theme.Register_styles.mainText}>User Name</Text>
                           <TextInput
-                            style={theme.Register_styles.placeholder_text}
+                            style={theme.Register_styles.placeholderText}
                             onChangeText={handleChange("UserName")}
                             value={UserName}
                             onBlur={handleBlur("UserName")}
                           />
                           {errors ? (
-                            <Text style={theme.Register_styles.error_text}>{touched.UserName && errors.UserName}</Text>
+                            <Text style={theme.Register_styles.errorText}>{touched.UserName && errors.UserName}</Text>
                           ) : null}
-                          <Text style={theme.Register_styles.main_text}>Phone Number</Text>
+                          <Text style={theme.Register_styles.mainText}>Phone Number</Text>
                           <TextInput
-                            style={theme.Register_styles.placeholder_text}
+                            style={theme.Register_styles.placeholderText}
                             onChangeText={handleChange("PhoneNumber")}
                             value={PhoneNumber}
                             keyboardType="numeric"
                             onBlur={handleBlur("PhoneNumber")}
                           />
                           {errors ? (
-                            <Text style={theme.Register_styles.error_text}>{touched.PhoneNumber && errors.PhoneNumber}</Text>
+                            <Text style={theme.Register_styles.errorText}>{touched.PhoneNumber && errors.PhoneNumber}</Text>
                           ) : null}
-                          <Text style={theme.Register_styles.main_text}>Password</Text>
+                          <Text style={theme.Register_styles.mainText}>Password</Text>
                           <TextInput
-                            style={theme.Register_styles.placeholder_text}
+                            style={theme.Register_styles.placeholderText}
                             secureTextEntry={!visible}
                             onChangeText={handleChange("Password")}
                             value={Password}
                             onBlur={handleBlur("Password")}
                           />
-                          <Icon name={visible ? "eye" : "eye-slash"} size={25} style={theme.Register_styles.eye_icon}
+                          <Icon name={visible ? "eye" : "eye-slash"} size={25} style={theme.Register_styles.eyeIcon}
                             onPress={() => { setVisible(!visible) }}
                           />
                           {errors ? (
-                            <Text style={theme.Register_styles.error_text}>{touched.Password && errors.Password}</Text>
+                            <Text style={theme.Register_styles.errorText}>{touched.Password && errors.Password}</Text>
                           ) : null}
-                          <Text style={theme.Register_styles.main_text}>Conform Password</Text>
+                          <Text style={theme.Register_styles.mainText}>Conform Password</Text>
                           <TextInput
-                            style={theme.Register_styles.placeholder_text}
+                            style={theme.Register_styles.placeholderText}
                             onChangeText={handleChange("ConformPassword")}
                             value={ConformPassword}
                             secureTextEntry={!anotherVisible}
                             onBlur={handleBlur("ConformPassword")}
                           />
-                          <Icon name={anotherVisible ? "eye" : "eye-slash"} size={25} style={theme.Register_styles.eye_icon1}
+                          <Icon name={anotherVisible ? "eye" : "eye-slash"} size={25} style={theme.Register_styles.eyeIcon1}
                             onPress={() => { setAnotherVisible(!anotherVisible) }}
                           />
                           {errors ? (
-                            <Text style={theme.Register_styles.error_text}>{touched.ConformPassword && errors.ConformPassword}</Text>
+                            <Text style={theme.Register_styles.errorText}>{touched.ConformPassword && errors.ConformPassword}</Text>
                           ) : null}
-                          <TouchableOpacity onPress={handleSubmit} style={theme.Register_styles.register_opacity} >
-                            <Text style={theme.Register_styles.register_text}>
+                          <TouchableOpacity onPress={handleSubmit} style={theme.Register_styles.registerOpacity} >
+                            <Text style={theme.Register_styles.registerText}>
                               Register 🗂️
                             </Text>
                           </TouchableOpacity>
-                          <Image source={require('../Assets/Register_images/google.jpg')} style={theme.Register_styles.google_image_style}></Image>
-                          <Image source={require('../Assets/Register_images/Facebook.jpg')} style={theme.Register_styles.FaceBook_image_style}></Image>
-                          <Image source={require('../Assets/Register_images/Microsoft.jpg')} style={theme.Register_styles.Microsoft_image_style}></Image>
+                          <Image source={require('../Assets/Register_images/google.jpg')} style={theme.Register_styles.googleImage}></Image>
+                          <Image source={require('../Assets/Register_images/Facebook.jpg')} style={theme.Register_styles.faceBookImage}></Image>
+                          <Image source={require('../Assets/Register_images/Microsoft.jpg')} style={theme.Register_styles.microsoftImage}></Image>
                         </View>
                       </View>
                     </ScrollView>

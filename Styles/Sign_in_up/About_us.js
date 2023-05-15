@@ -14,7 +14,7 @@ export const About_us_Style = StyleSheet.create({
         marginTop: 70,
         color: "darkblue"
     },
-    arrow_icon: {
+    arrowIcon: {
         color: 'black',
         marginTop: 20,
         marginLeft: 20,

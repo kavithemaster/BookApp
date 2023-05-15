@@ -8,56 +8,59 @@ export const Book_Details_Styles = StyleSheet.create({
         flexDirection: "row",
         top: 15,
     },
-    navigate_before_icon: {
+    navigateBeforeIcon: {
         color: "black",
         marginLeft: 10,
     },
     image: {
         width: "100%",
-        height: 370,
-        resizeMode:"stretch",
-        // marginHorizontal: 10,
-        borderTopRightRadius: 30,
-        borderTopLeftRadius: 30
-    },
-    imageConatiner: {
-        elevation:5,
-        // borderWidth:2,
-        width: '95%',
-        top:20,marginHorizontal: 10,
+        height: 310,
+        resizeMode: "stretch",
         borderTopRightRadius: 30,
         borderTopLeftRadius: 30,
-        paddingTop: 10
-
+        top:14,
     },
-    name_text: {
+    imageConatiner: {
+        elevation: 5,
+        width: '90%',
+        top: 20,
+        marginHorizontal: 10,
+        borderTopRightRadius: 30,
+        borderTopLeftRadius: 30,
         alignSelf: "center",
+        height:310,
+        zIndex:2,
+    },
+    nameText: {
         fontSize: 30,
         fontWeight: "700",
         color: "black",
         fontStyle: "italic",
         position: "absolute",
-        marginLeft: 100,
         textDecorationLine: "underline",
+        textAlign: "center",
+        marginLeft: 100,
     },
-    main_text: {
-        alignSelf: "flex-end",
+    mainText: {
+        alignSelf: "center",
         fontSize: 20,
         fontWeight: "700",
-        color: "black",
         marginBottom: 90,
         padding: 27,
         textAlign: "justify",
-        top:40,
+        overflow:"hidden",
+        marginTop:25,
+        fontSize:20,
+
     },
-    read_more_text: {
+    readMoreText: {
         color: "blue",
         fontWeight: "900",
     },
     overlayStyle: {
         borderRadius: 20,
     },
-    overlay_container: {
+    overlayContainer: {
         width: 378,
         height: 390,
         backgroundColor: "white",
@@ -65,18 +68,18 @@ export const Book_Details_Styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center'
     },
-    subscribe_text: {
+    subscribeText: {
         fontSize: 26,
         marginTop: 10,
         color: "black",
         fontWeight: "800",
     },
-    overlay_gif: {
+    overlayGif: {
         width: 190,
         height: 160,
         marginTop: 40,
     },
-    click_here_text: {
+    clickHereText: {
         fontSize: 30,
         marginTop: 60,
         color: "black",

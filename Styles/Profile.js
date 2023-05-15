@@ -14,7 +14,7 @@ export const Profile_Styles = StyleSheet.create({
         borderTopLeftRadius: 160,
         borderBottomLeftRadius: 160,
     },
-    main_text: {
+    mainText: {
         fontSize: 19,
         fontWeight: "bold",
         textShadowRadius: 4,
@@ -23,7 +23,7 @@ export const Profile_Styles = StyleSheet.create({
         color: "black",
         marginTop: 63,
     },
-    logout_maincontainer: {
+    logoutMainContainer: {
         backgroundColor: "red",
         width: "50%",
         height: 60,
@@ -33,14 +33,14 @@ export const Profile_Styles = StyleSheet.create({
         borderWidth: 2,
         marginLeft:70,
     },
-    logout_text: {
+    logoutText: {
         fontSize: 22,
         alignSelf: "center",
         fontWeight: "bold",
         marginTop: 15,
         color: "white",
     },
-    my_account_text: {
+    myAccountText: {
         fontSize: 30,
         marginTop: 20,
         color: "black",
@@ -48,16 +48,7 @@ export const Profile_Styles = StyleSheet.create({
         fontWeight: "bold",
         position:"absolute"
     },
-    edit_text: {
-        fontSize: 25,
-        alignSelf: "center",
-        fontWeight: "bold",
-        marginTop: 10,
-        marginLeft: 30,
-        textDecorationLine: "underline",
-        color: "black",
-    },
-    placeholder_text: {
+    placeholderText: {
         fontSize: 19,
         marginLeft: 36,
         color: "black",
@@ -65,7 +56,7 @@ export const Profile_Styles = StyleSheet.create({
         width: "60%",
         fontWeight: "bold",
     },
-    formik_mainContainer: {
+    formikMainContainer: {
         backgroundColor: "lightblue",
         width: "94%",
         height: 450,
@@ -74,12 +65,12 @@ export const Profile_Styles = StyleSheet.create({
         elevation: 60,
         marginLeft: 15,
     },
-    error_text: {
+    errorText: {
         color: "red",
         fontSize: 15,
         marginLeft: 20,
     },
-    submit_button: {
+    submitButton: {
         backgroundColor: "red",
         width: "50%",
         height: 60,
@@ -88,7 +79,7 @@ export const Profile_Styles = StyleSheet.create({
         borderRadius: 20,
         borderWidth: 2,
     },
-    submit_text: {
+    submitText: {
         fontSize: 22,
         alignSelf: "center",
         fontWeight: "bold",
@@ -112,13 +103,13 @@ export const Profile_Styles = StyleSheet.create({
         color: "black",
         marginTop: 20,
     },
-    setting_icon: {
+    settingIcon: {
         color: "black",
         position: "absolute",
         alignSelf: "flex-end",
         padding: 8,
     },
-    setting_modal: {
+    settingModal: {
         width: 190,
         height: 80,
         backgroundColor: "lightblue",
@@ -127,7 +118,7 @@ export const Profile_Styles = StyleSheet.create({
         right: 5,
         borderRadius: 17,
     },
-    setting_modal_text: {
+    settingModalText: {
         fontSize: 20,
         color: "black",
         fontWeight: "900",

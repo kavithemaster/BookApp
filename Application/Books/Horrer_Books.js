@@ -97,20 +97,20 @@ const Horrer = () => {
             {
                 ({ theme }) => (
                     <View style={theme.Horrer_Book_style.mainPage}>
-                        <Icon name="navigate-before" size={50} style={theme.Horrer_Book_style.navigate_before_icon} onPress={() => navigation.goBack()}></Icon>
-                        <View style={theme.Horrer_Book_style.keyboard_voice_icon}>
+                        <Icon name="navigate-before" size={50} style={theme.Horrer_Book_style.navigateBeforeIcon} onPress={() => navigation.goBack()}></Icon>
+                        <View style={theme.Horrer_Book_style.keyboardVoiceIcon}>
                             <VoiceRecognition />
                         </View>
-
                         <SearchBar
-                            containerStyle={theme.Horrer_Book_style.SearchBar_style}
+                            containerStyle={theme.Horrer_Book_style.searchBarStyle}
                             lightTheme
                             placeholder="Search Here"
-                            placeholderTextColor="black"                            
+                            placeholderTextColor="black"
                             round
                             value={search}
-                            onChangeText={e => setSearch(e)}  
-                            inputStyle={theme.Action_Book_Styles.SearchBar_input}  
+                            onChangeText={e => setSearch(e)}
+                            inputStyle={theme.Horrer_Book_style.searchBarInput}
+
                         >
                         </SearchBar>
                         <VirtualizedList
@@ -130,25 +130,27 @@ const Horrer = () => {
                                     return (
                                         item != null ?
                                             <View style={theme.Horrer_Book_style.mainContainer}>
-                                                <TouchableOpacity onPress={() => navigation.navigate("Book_Details",item)}>
-                                                    <ImageBackground source={item.req}
-                                                        style={theme.Horrer_Book_style.Image_style} >
-                                                        <Icon name={item.favourite ? "favorite" : "favorite-border"} size={42} style={theme.Action_Book_Styles.Fav_Style}
+                                                <TouchableOpacity onPress={() => navigation.navigate("Book_Details", item)}>
+                                                    <ImageBackground source={item.req} style={theme.Horrer_Book_style.imageStyle}  >
+                                                        <Icon name={item.favourite ? "favorite" : "favorite-border"} size={42} style={theme.Horrer_Book_style.favouriteStyle}
                                                             onPress={() => { item.favourite = !item.favourite, addtofavourite(item) }} />
                                                     </ImageBackground>
                                                 </TouchableOpacity>
-                                                <Text style={theme.Action_Book_Styles.amount_style}>{[item.name, ("        Rs."), item.amount]}</Text>
-                                                <Rating
-                                                   type='star'
-                                                   ratingCount={5}
-                                                   imageSize={30}
-                                                   startingValue={4.2}
-                                                   tintColor="lightblue"
-                                                   fractions={2}
-                                                   showRating={true}
-                                                   ratingTextColor="red"
-                                                    style={theme.Horrer_Book_style.rating}
-                                                />
+                                                <Text style={theme.Horrer_Book_style.amountStyle}>{[item.name, ("        Rs."), item.amount]}</Text>
+                                                <View>
+                                                    <Rating
+                                                        type='star'
+                                                        ratingCount={5}
+                                                        imageSize={30}
+                                                        startingValue={4.2}
+                                                        tintColor="lightblue"
+                                                        fractions={2}
+                                                        showRating={true}
+                                                        ratingTextColor="red"
+                                                        style={theme.Horrer_Book_style.rating}
+                                                        
+                                                    />
+                                                </View>
                                             </View>
                                             : null)
                                 }

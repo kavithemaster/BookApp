@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native'
 export const Book_Page_styles = StyleSheet.create({
-    main_container: {
+    mainContainer: {
         backgroundColor: "white",
         justifyContent:"center",
     },

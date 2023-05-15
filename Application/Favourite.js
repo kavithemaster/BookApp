@@ -25,7 +25,7 @@ const Favourite = () => {
                 ({ theme }) => (
                     <View>
                         <View style={{position:"absolute", backgroundColor:"white", flex:1}}>
-                            <Image source={require("../Application/Assets/favorite.gif")} style={theme.Favourite_styles.favourite_gif} ></Image>
+                            <Image source={require("../Application/Assets/favorite.gif")} style={theme.Favourite_styles.favouriteGif} ></Image>
                             <Text style={theme.Favourite_styles.text}>You didn't add any Favourite Books please go back and add it</Text>
                         </View>
                         <View style={theme.Favourite_styles.maincontainer}>
@@ -34,8 +34,8 @@ const Favourite = () => {
                                     return (
                                         <View key={item.id}>
                                             <TouchableOpacity onPress={() => navigation.navigate("Book_Details", item)}>
-                                                <ImageBackground source={item.req} style={theme.Favourite_styles.Image_style}>
-                                                    <Icon name={"favorite"} size={37} style={theme.Favourite_styles.favourite_icon}
+                                                <ImageBackground source={item.req} style={theme.Favourite_styles.image}>
+                                                    <Icon name={"favorite"} size={37} style={theme.Favourite_styles.favouriteIcon}
                                                         onPress={() => addtofavourite(item)}
                                                     />
                                                 </ImageBackground>

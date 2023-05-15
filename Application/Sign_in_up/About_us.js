@@ -11,7 +11,7 @@ const AboutUs = () => {
             {
                 ({ theme }) => (
                     <View style={theme.About_us_Style.mainContainer}>
-                        <Icon name="arrow-left" size={30} style={theme.About_us_Style.arrow_icon} onPress={() => navigation.goBack()}></Icon>
+                        <Icon name="arrow-left" size={30} style={theme.About_us_Style.arrowIcon} onPress={() => navigation.goBack()}></Icon>
                         <Text style={theme.About_us_Style.text}>Books have the power to improve your vocabulary by introducing you to new words. The more you read, the more your vocabulary grows, along with your ability to effectively communicate. Additionally, reading improves writing skills by helping the reader understand and learn different writing styles.</Text>
                         <Text style={theme.About_us_Style.text}>Good about reading books in online
                             1. E-Book benefits

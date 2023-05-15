@@ -54,7 +54,7 @@ const Book_Category = () => {
                         <FlatList
                             data={items}
                             renderItem={({ item }) =>
-                                <View style={theme.Book_Page_styles.main_container}>
+                                <View style={theme.Book_Page_styles.mainContainer}>
                                     <Text style={theme.Book_Page_styles.text} onPress={()=> navigation.navigate(item.action)}>{item.name}</Text>
                                     <ImageBackground source={item.req} style={theme.Book_Page_styles.image}>
                                         <TouchableOpacity style={theme.Book_Page_styles.opacity} onPress={() => navigation.navigate(item.action)}>

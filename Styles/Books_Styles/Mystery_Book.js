@@ -11,14 +11,14 @@ export const Mystery_Book_Styles = StyleSheet.create({
         backgroundColor: "white",
         flex: 1,
     },
-    Image_style: {
+    imageStyle: {
         height: 380,
         width: "92%",
         marginTop: 15,
         marginLeft: 19,
         alignSelf: "center",
     },
-    amount_style: {
+    amountStyle: {
         fontSize: 20,
         color: 'black',
         backgroundColor: "lavenderblush",
@@ -34,13 +34,13 @@ export const Mystery_Book_Styles = StyleSheet.create({
         marginLeft: 30,
         marginTop: 15,
     },
-    Fav_Style: {
+    favouriteStyle: {
         color: 'red',
         backgroundColor: "white",
         width: 45,
         height: 45,
         fontWeight: 'bold',
-        marginLeft: 190,
+        marginLeft: 195,
         position: "absolute",
         borderWidth: 1,
         borderRadius: 90,
@@ -48,7 +48,7 @@ export const Mystery_Book_Styles = StyleSheet.create({
         paddingTop: 3,
         marginTop: 3,
     },
-    SearchBar_style: {
+    searchBarStyle: {
         width: 300,
         height: 60,
         marginLeft: 60,
@@ -56,18 +56,18 @@ export const Mystery_Book_Styles = StyleSheet.create({
         backgroundColor:"white",
         borderColor: 'white'
     },
-    navigate_before_icon: {
+    navigateBeforeIcon: {
         position: "absolute",
         marginTop: 15,
         color: "black",
     },
-    keyboard_voice_icon: {
+    keyboardVoiceIcon: {
         position: "absolute",
         marginTop: 21,
         color: "black",
         marginLeft: 365,
     },
-    SearchBar_input: {
+    searchBarInput: {
         color: "black",
         fontSize: 20,
     },

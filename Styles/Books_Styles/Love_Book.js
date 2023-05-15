@@ -26,7 +26,7 @@ export const Love_Book_Styles = StyleSheet.create({
         borderRadius: 30,
         position: "absolute",
     },
-    button_text: {
+    buttonText: {
         fontSize: 30,
         fontStyle: "italic",
         alignSelf: "center",

@@ -96,63 +96,66 @@ const Mystery = () => {
             {
                 ({ theme }) => (
                     <View style={theme.Mystery_Book_Styles.mainPage}>
-                        <Icon name="navigate-before" size={50} style={theme.Mystery_Book_Styles.navigate_before_icon} onPress={() => navigation.goBack()}></Icon>
-                        <View style={theme.Mystery_Book_Styles.keyboard_voice_icon}>
-                            <VoiceRecognition />
-                        </View>
-                        <SearchBar
-                            containerStyle={theme.Mystery_Book_Styles.SearchBar_style}
-                            lightTheme
-                            placeholder="Search Here"
-                            placeholderTextColor="black"                            
-                            round
-                            value={search}
-                            onChangeText={e => setSearch(e)}  
-                            inputStyle={theme.Action_Book_Styles.SearchBar_input}  
-                        >
-                        </SearchBar>
-                        <VirtualizedList
-                            getItemCount={items => items.length}
-                            keyExtractor={(item, index) => index}
-                            getItem={getItem}
-                            onEndReached={onEndReached}
-                            onEndReachedThreshold={0.01}
-                            ListFooterComponent={<ActivityIndicator size={60} />
-                            }
-                            ListFooterComponentStyle={{ marginBottom: '15%' }}
-                            data={cardItem}
-                            renderItem={({ item }) => {
-                                let val = search?.toLowerCase().replace(/\s/, '');
-                                let newVal = item?.name?.toLowerCase().replace(/\s/, '');
-                                if (newVal?.includes(val)) {
-                                    return (
-                                        item != null ?
-                                            <View style={theme.Mystery_Book_Styles.mainContainer}>
-                                                <TouchableOpacity onPress={() => navigation.navigate("Book_Details",item)}>
-                                                    <ImageBackground source={item.req}
-                                                        style={theme.Mystery_Book_Styles.Image_style} >
-                                                        <Icon name={item.favourite ? "favorite" : "favorite-border"} size={42} style={theme.Action_Book_Styles.Fav_Style}
-                                                            onPress={() => { item.favourite = !item.favourite, addtofavourite(item) }} />
-                                                    </ImageBackground>
-                                                </TouchableOpacity>
-                                                <Text style={theme.Action_Book_Styles.amount_style}>{[item.name, ("        Rs."), item.amount]}</Text>
+                    <Icon name="navigate-before" size={50} style={theme.Mystery_Book_Styles.navigateBeforeIcon} onPress={() => navigation.goBack()}></Icon>
+                    <View style={theme.Mystery_Book_Styles.keyboardVoiceIcon}>
+                        <VoiceRecognition />
+                    </View>
+                    <SearchBar
+                        containerStyle={theme.Mystery_Book_Styles.searchBarStyle}
+                        lightTheme
+                        placeholder="Search Here"
+                        placeholderTextColor="black"
+                        round
+                        value={search}
+                        onChangeText={e => setSearch(e)}
+                        inputStyle={theme.Mystery_Book_Styles.searchBarInput}
+
+                    >
+                    </SearchBar>
+                    <VirtualizedList
+                        getItemCount={items => items.length}
+                        keyExtractor={(item, index) => index}
+                        getItem={getItem}
+                        onEndReached={onEndReached}
+                        onEndReachedThreshold={0.01}
+                        ListFooterComponent={<ActivityIndicator size={60} />
+                        }
+                        ListFooterComponentStyle={{ marginBottom: '15%' }}
+                        data={cardItem}
+                        renderItem={({ item }) => {
+                            let val = search?.toLowerCase().replace(/\s/, '');
+                            let newVal = item?.name?.toLowerCase().replace(/\s/, '');
+                            if (newVal?.includes(val)) {
+                                return (
+                                    item != null ?
+                                        <View style={theme.Mystery_Book_Styles.mainContainer}>
+                                            <TouchableOpacity onPress={() => navigation.navigate("Book_Details", item)}>
+                                                <ImageBackground source={item.req} style={theme.Mystery_Book_Styles.imageStyle}  >
+                                                    <Icon name={item.favourite ? "favorite" : "favorite-border"} size={42} style={theme.Mystery_Book_Styles.favouriteStyle}
+                                                        onPress={() => { item.favourite = !item.favourite, addtofavourite(item) }} />
+                                                </ImageBackground>
+                                            </TouchableOpacity>
+                                            <Text style={theme.Mystery_Book_Styles.amountStyle}>{[item.name, ("        Rs."), item.amount]}</Text>
+                                            <View>
                                                 <Rating
-                                                   type='star'
-                                                   ratingCount={5}
-                                                   imageSize={30}
-                                                   startingValue={4.2}
-                                                   tintColor="lightblue"
-                                                   fractions={2}
-                                                   showRating={true}
-                                                   ratingTextColor="red"
+                                                    type='star'
+                                                    ratingCount={5}
+                                                    imageSize={30}
+                                                    startingValue={4.2}
+                                                    tintColor="lightblue"
+                                                    fractions={2}
+                                                    showRating={true}
+                                                    ratingTextColor="red"
                                                     style={theme.Mystery_Book_Styles.rating}
+                                                    
                                                 />
                                             </View>
-                                            : null)
-                                }
-                            }}
-                        />
-                    </View>
+                                        </View>
+                                        : null)
+                            }
+                        }}
+                    />
+                </View>
                 )
             }
         </ThemeConsumer>
