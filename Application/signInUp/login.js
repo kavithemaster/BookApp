@@ -86,6 +86,8 @@ const Login = () => {
               <TextInput
                 style={theme.login.placeholderText}
                 onChangeText={onEmailChangeHandler}
+                autoCapitalize={"none"}
+                keyboardType="email-address"
               />
               <Text style={theme.login.mainText}>Password 🔑</Text>
               <TextInput

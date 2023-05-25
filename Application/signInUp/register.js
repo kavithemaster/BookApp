@@ -88,6 +88,7 @@ const Register = () => {
                             onChangeText={handleChange("Email")}
                             value={Email}
                             keyboardType="email-address"
+                            autoCapitalize={"none"}
                             onBlur={handleBlur("Email")}
                           />
                           {errors ? (

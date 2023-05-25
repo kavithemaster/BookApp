@@ -16,11 +16,9 @@ export const bookPage = StyleSheet.create({
         borderWidth: 1,
         fontStyle: "italic",
         textShadowRadius: 10,
-        alignSelf: "center",
         borderBottomWidth: 8,
         borderBottomColor:"dodgerblue",
         marginTop: 1,
-        justifyContent:"center",
         marginHorizontal:3,
     },
     opacity: {
